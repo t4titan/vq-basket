@@ -1,0 +1,201 @@
+Project: Victoria’s Queens Basketball Foundation Website
+Type: Nonprofit, content-driven, donation-enabled platform
+
+🔧 Tech Stack
+
+Build a modern, responsive nonprofit website using:
+
+React
+
+TypeScript
+
+Tailwind CSS
+
+Headless CMS for blog and content management
+
+Preferred: Sanity
+
+Alternative: Markdown-based CMS
+
+Optional backend (for admin features): Node.js / Express
+
+Image optimization using modern best practices
+
+🎨 Design & Branding
+
+Primary brand color: #d85023
+
+Clean, professional, and modern UI
+
+Strong visual hierarchy (clear headings, spacing, sections)
+
+Mobile-first and fully responsive
+
+Accessible design (semantic HTML, ARIA labels, contrast compliance)
+
+Faith-respecting and community-oriented visual tone
+
+📄 Required Pages & Features
+1. Homepage
+
+Hero section with mission-driven headline
+
+Short intro about the foundation
+
+Impact statistics (e.g. girls trained, tournaments won)
+
+Strong CTAs:
+
+Donate
+
+Join a Program
+
+Partner With Us
+
+Featured blog posts or success stories
+
+2. About Page
+
+Foundation story
+
+Mission, vision, and core values
+
+Faith-based but inclusive language
+
+Team or leadership section (optional)
+
+3. Programs Page
+
+Basketball programs
+
+Educational and mentorship initiatives
+
+Nigeria-focused grassroots programs
+
+Clear “Get Involved” CTA
+
+4. Empowerment Page
+
+Life skills and vocational training
+
+Academic support and leadership development
+
+Community impact explanation
+
+5. Impact Page
+
+Achievements and milestones
+
+Tournaments and competitions
+
+Community outreach highlights
+
+Data-driven storytelling
+
+6. Brand Ambassadors Page
+
+Profiles of ambassadors
+
+Roles, achievements, and inspiration stories
+
+7. Blog System
+
+Dynamic blog routing (/blog, /blog/[slug])
+
+CMS-driven content (Sanity or Markdown)
+
+SEO-optimized blog posts
+
+Categories and featured images
+
+Used for:
+
+Player stories
+
+Event recaps
+
+Community updates
+
+Faith and youth development articles
+
+8. Gallery
+
+Image and video gallery
+
+Optimized image loading
+
+Filter by events or categories
+
+Admin-managed content
+
+9. Contact Page
+
+Contact form
+
+Email and phone details
+
+Clear call to connect or partner
+
+💰 Donation System
+
+Donation CTA across the site
+
+Integration with a secure payment provider (e.g. Paystack, Stripe, Flutterwave)
+
+Donation tracking for admin
+
+Donor-friendly UX and trust indicators
+
+🧑‍💼 Admin Dashboard (Protected Area)
+
+Build an Admin Dashboard with authentication to allow admins to:
+
+Track donations (amount, date, donor info if available)
+
+Create, edit, and delete:
+
+Events
+
+Blog posts
+
+Gallery images and videos
+
+Manage homepage featured content
+
+Simple, clean admin UI
+
+🔍 SEO & Performance
+
+SEO-optimized page titles and meta descriptions
+
+Open Graph tags for social sharing
+
+Fast load times and optimized images
+
+Clean URLs and semantic HTML
+
+Sitemap and basic SEO structure
+
+🗣️ Content Tone
+
+Professional
+
+Inspirational
+
+Community-focused
+
+Faith-respecting
+
+Donor-friendly and trustworthy
+
+🎯 Goal
+
+Create a scalable, easy-to-manage nonprofit website that:
+
+Tells compelling stories
+
+Builds trust with donors
+
+Empowers young girls
+
+Makes content updates simple for non-technical admins
