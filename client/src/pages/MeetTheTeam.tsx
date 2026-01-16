@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
-import { useTeam } from "@/hooks/use-team";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useTeamMembers } from "@/hooks/use-team";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function MeetTheTeam() {
-  const { data: team } = useTeam();
+  const { data: team } = useTeamMembers();
   const staff = team?.filter(m => m.type === 'team');
 
   return (

@@ -21,6 +21,8 @@ export function Navigation() {
   const [location] = useLocation();
   const { user } = useAuth();
 
+  const isActive = (path: string) => location === path;
+
   const menuItems = [
     {
       label: "About Us",
@@ -78,7 +80,9 @@ export function Navigation() {
                             <NavigationMenuLink asChild>
                               <Link
                                 href={sub.href}
-                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground ${
+                                  isActive(sub.href) ? "bg-accent" : ""
+                                }`}
                               >
                                 <div className="text-sm font-medium leading-none">{sub.label}</div>
                               </Link>
@@ -97,7 +101,7 @@ export function Navigation() {
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location === link.href ? "text-primary font-semibold" : "text-secondary"
+                  isActive(link.href) ? "text-primary font-semibold" : "text-secondary"
                 }`}
               >
                 {link.label}
@@ -137,7 +141,29 @@ export function Navigation() {
             exit={{ opacity: 0, y: -20 }}
             className="fixed inset-0 top-20 bg-background z-40 lg:hidden overflow-y-auto"
           >
-            <div className="container-custom py-8 flex flex-col gap-6">
+            <div className="container-custom py-8 flex flex-col gap-8">
+              {menuItems.map((item) => (
+                <div key={item.label} className="space-y-4">
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground">{item.label}</h3>
+                  <div className="grid gap-4 pl-4">
+                    {item.sublinks.map((sub) => (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`text-xl font-serif font-bold ${
+                          isActive(sub.href) ? "text-primary" : "text-secondary"
+                        }`}
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+              
+              <div className="h-px bg-border my-2" />
+              
               {links.map((link) => (
                 <Link
                   key={link.href}
@@ -150,7 +176,9 @@ export function Navigation() {
                   {link.label}
                 </Link>
               ))}
+
               <div className="h-px bg-border my-2" />
+              
               {user && (
                 <Link href="/admin" onClick={() => setIsOpen(false)} className="text-lg font-medium text-secondary">
                   Admin Dashboard
