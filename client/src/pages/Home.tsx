@@ -152,7 +152,7 @@ export default function Home() {
               <p className="text-muted-foreground">Glimpses into our training sessions and community events.</p>
             </div>
             <Link href="/gallery">
-              <Button variant="link" className="text-primary font-semibold group p-0">
+              <Button variant="ghost" className="text-primary font-semibold group p-0 hover:bg-transparent">
                 View full gallery <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
