@@ -15,19 +15,32 @@ import Contact from "@/pages/Contact";
 import Donate from "@/pages/Donate";
 import Admin from "@/pages/Admin";
 import NotFound from "@/pages/not-found";
+import MeetTheTeam from "@/pages/MeetTheTeam";
+import WhatWeDoNigeria from "@/pages/WhatWeDoNigeria";
+import WhatWeHaveDone from "@/pages/WhatWeHaveDone";
+import ShoeDrive from "@/pages/ShoeDrive";
+import Tournament3ON3 from "@/pages/Tournament3ON3";
+import Empowerment from "@/pages/Empowerment";
+import Ambassadors from "@/pages/Ambassadors";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
-      <Route path="/programs" component={Programs} />
       <Route path="/impact" component={Impact} />
+      <Route path="/team" component={MeetTheTeam} />
+      <Route path="/ambassadors" component={Ambassadors} />
+      <Route path="/programs" component={Programs} />
+      <Route path="/nigeria" component={WhatWeDoNigeria} />
+      <Route path="/empowerment" component={Empowerment} />
+      <Route path="/history" component={WhatWeHaveDone} />
+      <Route path="/shoe-drive" component={ShoeDrive} />
+      <Route path="/3on3" component={Tournament3ON3} />
+      <Route path="/blog" component={() => <div className="pt-24 text-center"><h1>Blog Coming Soon</h1></div>} />
       <Route path="/contact" component={Contact} />
       <Route path="/donate" component={Donate} />
       <Route path="/admin" component={Admin} />
-      {/* Add Blog, Gallery, Brand Ambassadors as needed, mapped to placeholders or components */}
-      <Route path="/blog" component={() => <div className="pt-24 text-center"><h1>Blog Coming Soon</h1></div>} />
       <Route component={NotFound} />
     </Switch>
   );

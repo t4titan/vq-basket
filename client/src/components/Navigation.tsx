@@ -7,27 +7,55 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import logoImg from "@assets/vq_1768547763009.png";
 
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
   const { user } = useAuth();
 
+  const menuItems = [
+    {
+      label: "About Us",
+      sublinks: [
+        { href: "/impact", label: "Impact" },
+        { href: "/team", label: "Meet the Team" },
+        { href: "/ambassadors", label: "Brand Ambassadors" },
+      ]
+    },
+    {
+      label: "Programs",
+      sublinks: [
+        { href: "/nigeria", label: "What We Do – Nigeria" },
+        { href: "/empowerment", label: "Empowerment" },
+      ]
+    },
+    {
+      label: "Events",
+      sublinks: [
+        { href: "/history", label: "What We Have Done" },
+        { href: "/shoe-drive", label: "Shoe Drive" },
+        { href: "/3on3", label: "3ON3 Tournament" },
+      ]
+    },
+  ];
+
   const links = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/programs", label: "Programs" },
-    { href: "/impact", label: "Impact" },
     { href: "/blog", label: "News" },
     { href: "/contact", label: "Contact" },
   ];
-
-  const isActive = (path: string) => location === path;
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 z-50">
             <img src={logoImg} alt="VQ Foundation Logo" className="w-12 h-12 object-contain" />
             <span className="font-serif font-bold text-xl md:text-2xl text-secondary leading-tight hidden sm:block">
@@ -35,21 +63,47 @@ export function Navigation() {
             </span>
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
+            <NavigationMenu>
+              <NavigationMenuList className="gap-2">
+                {menuItems.map((item) => (
+                  <NavigationMenuItem key={item.label}>
+                    <NavigationMenuTrigger className="bg-transparent text-secondary hover:text-primary transition-colors h-auto py-2">
+                      {item.label}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid w-[200px] gap-2 p-4">
+                        {item.sublinks.map((sub) => (
+                          <li key={sub.href}>
+                            <NavigationMenuLink asChild>
+                              <Link
+                                href={sub.href}
+                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              >
+                                <div className="text-sm font-medium leading-none">{sub.label}</div>
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary relative group ${
-                  isActive(link.href) ? "text-primary font-semibold" : "text-secondary"
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  location === link.href ? "text-primary font-semibold" : "text-secondary"
                 }`}
               >
                 {link.label}
-                <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform origin-left transition-transform duration-300 ${isActive(link.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
               </Link>
             ))}
-            
+
             {user && (
               <Link href="/admin">
                  <Button variant="ghost" size="sm" className="font-medium">Admin</Button>
