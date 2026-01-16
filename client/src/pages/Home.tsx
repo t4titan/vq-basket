@@ -134,7 +134,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
             <iframe 
               className="w-full h-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder YouTube video
+              src="https://www.youtube.com/embed/gZM_VZbWB3Y" 
               title="Visioneer Message"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowFullScreen
