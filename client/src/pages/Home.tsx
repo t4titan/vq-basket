@@ -1,27 +1,37 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Trophy, Users, Heart, Calendar } from "lucide-react";
+import { ArrowRight, Trophy, Users, Heart, Calendar, Image as ImageIcon } from "lucide-react";
 import { useEvents } from "@/hooks/use-events";
+import { useGallery } from "@/hooks/use-gallery";
 import { format } from "date-fns";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function Home() {
   const { data: events } = useEvents();
+  const { data: galleryItems } = useGallery();
+
+  const partners = [
+    { name: "Partner 1", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&q=40" },
+    { name: "Partner 2", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&q=40" },
+    { name: "Partner 3", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&q=40" },
+    { name: "Partner 4", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&q=40" },
+    { name: "Partner 5", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&q=40" },
+    { name: "Partner 6", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&q=40" },
+  ];
 
   return (
     <div className="w-full overflow-hidden">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center bg-secondary text-white overflow-hidden">
-        {/* Abstract Background Elements */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] -translate-x-1/2 translate-y-1/2" />
         </div>
 
-        {/* Hero Image Overlay */}
         <div className="absolute inset-0 z-0 opacity-20">
-           {/* Unsplash: Female basketball players huddled together representing teamwork */}
-           <img 
+          <img 
             src="https://images.unsplash.com/photo-1544919978-ddb7105fb2c3?auto=format&fit=crop&q=80" 
             alt="Basketball Team Huddle" 
             className="w-full h-full object-cover"
@@ -55,7 +65,6 @@ export default function Home() {
             </div>
           </motion.div>
           
-          {/* Floating Image Card */}
           <motion.div
              initial={{ opacity: 0, scale: 0.9 }}
              animate={{ opacity: 1, scale: 1 }}
@@ -63,7 +72,6 @@ export default function Home() {
              className="relative hidden lg:block"
           >
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 rotate-3 hover:rotate-0 transition-transform duration-500">
-              {/* Unsplash: determined female basketball player shooting */}
               <img 
                 src="https://images.unsplash.com/photo-1519766304800-096cdef43329?auto=format&fit=crop&q=80"
                 alt="Player shooting" 
@@ -78,87 +86,133 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mission Section */}
+      {/* About Snippet Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm">Our Mission</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-secondary">Building Champions for Life</h2>
-            <p className="text-lg text-muted-foreground">
-              We believe in the transformative power of sports. Our foundation focuses on three key pillars to ensure holistic development.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { icon: Trophy, title: "Athletic Excellence", desc: "Elite training and competitive opportunities to develop skills and sportsmanship." },
-              { icon: Users, title: "Leadership", desc: "Mentorship programs designed to build confidence, character, and leadership skills." },
-              { icon: Heart, title: "Community Impact", desc: "Service projects that teach the value of giving back and civic engagement." },
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
-                whileHover={{ y: -10 }}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-border/50 hover:shadow-xl transition-all"
-              >
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
-                  <item.icon className="w-7 h-7" />
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-primary font-bold tracking-wider uppercase text-sm">Who We Are</span>
+              <h2 className="text-4xl md:text-5xl font-serif text-secondary mt-2 mb-6">Building Champions for Life</h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Victoria's Queens Basketball Foundation is dedicated to the holistic development of young women in Nigeria. We use basketball as a tool for social change, providing elite training alongside life skills and vocational support.
+              </p>
+              <Link href="/about">
+                <Button variant="outline" className="rounded-full px-8 py-6 border-primary text-primary hover:bg-primary hover:text-white">
+                  Read Our Story <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4 pt-12">
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
+                  <img src="https://images.unsplash.com/photo-1544919978-ddb7105fb2c3?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="About VQ 1" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-muted-foreground">{item.desc}</p>
-              </motion.div>
-            ))}
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
+                  <img src="https://images.unsplash.com/photo-1519766304800-096cdef43329?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="About VQ 2" />
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
+                  <img src="https://images.unsplash.com/photo-1544919978-ddb7105fb2c3?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="About VQ 3" />
+                </div>
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
+                  <img src="https://images.unsplash.com/photo-1519766304800-096cdef43329?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="About VQ 4" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Latest Events Preview */}
-      <section className="section-padding bg-white relative">
+      {/* Visioneer Message Section */}
+      <section className="section-padding bg-secondary text-white">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif mb-6">A Message from Visioneer</h2>
+            <p className="text-xl text-white/80">Hear from our founder about the vision and passion behind Victoria's Queens.</p>
+          </div>
+          <div className="max-w-4xl mx-auto aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder YouTube video
+              title="Visioneer Message"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-serif mb-2">Upcoming Events</h2>
-              <p className="text-muted-foreground">Join us at our next game or workshop.</p>
+              <h2 className="text-3xl md:text-4xl font-serif mb-2">Moments of Impact</h2>
+              <p className="text-muted-foreground">Glimpses into our training sessions and community events.</p>
             </div>
-            <Link href="/events">
+            <Link href="/gallery">
               <Button variant="link" className="text-primary font-semibold group p-0">
-                View all events <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                View full gallery <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {events?.slice(0, 3).map((event) => (
-              <div key={event.id} className="group cursor-pointer">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-muted">
-                  {event.imageUrl ? (
-                    <img 
-                      src={event.imageUrl} 
-                      alt={event.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-secondary/5 text-muted-foreground">
-                      <Calendar className="w-12 h-12" />
-                    </div>
-                  )}
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-sm font-bold text-secondary shadow-sm">
-                    {format(new Date(event.date), "MMM d")}
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">{event.title}</h3>
-                <p className="text-sm text-muted-foreground flex items-center gap-2">
-                  <span className="truncate">{event.location}</span>
-                </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {galleryItems?.slice(0, 4).map((item, i) => (
+              <div key={item.id} className={`aspect-square rounded-2xl overflow-hidden shadow-md group ${i % 3 === 0 ? 'md:col-span-2 md:row-span-2 md:aspect-auto' : ''}`}>
+                <img 
+                  src={item.imageUrl} 
+                  alt={item.title || "Gallery Item"} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
             ))}
-            
-            {!events?.length && (
-              <div className="col-span-full text-center py-12 bg-muted/30 rounded-2xl border border-dashed border-border">
-                <Calendar className="w-12 h-12 mx-auto text-muted-foreground mb-3" />
-                <p className="text-muted-foreground">No upcoming events scheduled at the moment.</p>
-              </div>
+            {!galleryItems?.length && (
+              [1,2,3,4].map((i) => (
+                <div key={i} className="aspect-square bg-muted rounded-2xl animate-pulse" />
+              ))
             )}
           </div>
+        </div>
+      </section>
+
+      {/* Partner With Us Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="bg-primary rounded-3xl p-12 text-center text-white mb-20 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+            <div className="relative z-10">
+              <h2 className="text-4xl font-serif mb-6">Partner With Us</h2>
+              <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+                Join our mission to transform lives. We're looking for partners who share our commitment to empowering young African women.
+              </p>
+              <Link href="/contact">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-full px-10 h-14 font-bold text-lg">
+                  Become a Partner
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          <div className="text-center mb-10">
+            <h3 className="text-2xl font-serif text-secondary opacity-60">Supported by Industry Leaders</h3>
+          </div>
+          
+          <Carousel
+            opts={{ align: "start", loop: true }}
+            plugins={[Autoplay({ delay: 3000 })]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {partners.map((partner, index) => (
+                <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/4 lg:basis-1/6">
+                  <div className="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                    <img src={partner.logo} alt={partner.name} className="h-12 object-contain" />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </section>
 

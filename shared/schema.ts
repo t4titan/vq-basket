@@ -67,6 +67,14 @@ export const donations = pgTable("donations", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+export const partners = pgTable("partners", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  logoUrl: text("logo_url").notNull(),
+  websiteUrl: text("website_url"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
 // Zod Schemas
 export const insertPostSchema = createInsertSchema(posts).omit({ id: true, createdAt: true, publishedAt: true });
 export const insertEventSchema = createInsertSchema(events).omit({ id: true, createdAt: true });
@@ -74,6 +82,7 @@ export const insertGalleryItemSchema = createInsertSchema(galleryItems).omit({ i
 export const insertTeamMemberSchema = createInsertSchema(teamMembers).omit({ id: true, createdAt: true });
 export const insertMessageSchema = createInsertSchema(messages).omit({ id: true, createdAt: true });
 export const insertDonationSchema = createInsertSchema(donations).omit({ id: true, createdAt: true });
+export const insertPartnerSchema = createInsertSchema(partners).omit({ id: true, createdAt: true });
 
 // Types
 export type Post = typeof posts.$inferSelect;
@@ -93,3 +102,6 @@ export type InsertMessage = z.infer<typeof insertMessageSchema>;
 
 export type Donation = typeof donations.$inferSelect;
 export type InsertDonation = z.infer<typeof insertDonationSchema>;
+
+export type Partner = typeof partners.$inferSelect;
+export type InsertPartner = z.infer<typeof insertPartnerSchema>;
