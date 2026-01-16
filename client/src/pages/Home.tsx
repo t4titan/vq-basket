@@ -127,18 +127,30 @@ export default function Home() {
       {/* Visioneer Message Section */}
       <section className="section-padding bg-secondary text-white">
         <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif mb-6">A Message from Visioneer</h2>
-            <p className="text-xl text-white/80">Hear from our founder about the vision and passion behind Victoria's Queens.</p>
-          </div>
-          <div className="max-w-4xl mx-auto aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
-            <iframe 
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/gZM_VZbWB3Y" 
-              title="Visioneer Message"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-            />
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="space-y-6">
+              <span className="text-primary font-bold tracking-wider uppercase text-sm">Vision & Faith</span>
+              <h2 className="text-4xl md:text-5xl font-serif">A Message from Visioneer</h2>
+              <div className="space-y-4 text-xl text-white/80 leading-relaxed">
+                <p className="font-bold text-white">ABOUT VICTORIA’S QUEENS BASKETBALL FOUNDATION</p>
+                <p>
+                  Victoria’s Queens Basketball Foundation is a faith-based nonprofit organization dedicated to empowering young girls through basketball. We provide free training, mentorship, and spiritual guidance to help girls from underserved communities thrive physically, mentally, and spiritually.
+                </p>
+                <p>
+                  Our mission is to build strong leaders, foster academic success, and inspire hope through faith and teamwork, creating brighter futures both on and off the court.
+                </p>
+              </div>
+              <p className="text-white/60 italic">Hear from our founder about the vision and passion behind Victoria's Queens.</p>
+            </div>
+            <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
+              <iframe 
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/gZM_VZbWB3Y" 
+                title="Visioneer Message"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
       </section>
