@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Heart } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ThemeToggle } from "./ThemeToggle";
 
 import logoImg from "@assets/vq_1768547763009.png";
 
@@ -27,6 +28,7 @@ export function Navigation() {
     {
       label: "About Us",
       sublinks: [
+        {href: "/about", label: "About Us"},
         { href: "/impact", label: "Impact" },
         { href: "/team", label: "Meet the Team" },
         { href: "/ambassadors", label: "Brand Ambassadors" },
@@ -60,8 +62,11 @@ export function Navigation() {
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center space-x-3 z-50">
             <img src={logoImg} alt="VQ Foundation Logo" className="w-12 h-12 object-contain" />
-            <span className="font-serif font-bold text-xl md:text-2xl text-secondary leading-tight hidden sm:block">
-              Victoria's Queens<br /><span className="text-sm font-sans font-normal text-muted-foreground">Basketball Foundation</span>
+            <span>
+              <span className="font-serif font-bold text-xl md:text-2xl text-secondary leading-tight hidden sm:block">
+                Victoria's Queens
+              </span>
+              <span className="text-sm font-sans font-normal text-muted-foreground">Basketball Foundation</span>
             </span>
           </Link>
 
@@ -74,7 +79,7 @@ export function Navigation() {
                       {item.label}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid w-[200px] gap-2 p-4">
+                      <ul className="grid w-[200px] gap-2 p-4 bg-white">
                         {item.sublinks.map((sub) => (
                           <li key={sub.href}>
                             <NavigationMenuLink asChild>
@@ -120,15 +125,19 @@ export function Navigation() {
                 Donate
               </Button>
             </Link>
+            <ThemeToggle />
           </nav>
 
           {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden z-50 p-2 text-secondary hover:text-primary transition-colors"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden z-50">
+            <ThemeToggle />
+            <button
+              className="p-2 text-secondary hover:text-primary transition-colors"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
