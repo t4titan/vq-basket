@@ -335,16 +335,10 @@ export default function Home() {
           >
             <CarouselContent className="-ml-4">
               {partners.map((partner, index) => (
-                <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/4 lg:basis-1/6">
-                  <motion.div 
-                    initial={{ scale: 1, filter: "grayscale(0%)" }}
-                    whileInView={{ scale: 1.2, filter: "grayscale(100%)" }}
-                    viewport={{ margin: "-45% 0px -45% 0px" }}
-                    transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="p-4 flex items-center justify-center transition-all"
-                  >
-                    <img src={partner.logo} alt={partner.name} className="h-12 object-contain" />
-                  </motion.div>
+                <CarouselItem key={index} className="pl-2 basis-1/2 md:basis-1/4 lg:basis-1/6">
+                  <div className="py-4 px-1 flex items-center justify-center transition-all">
+                    <img src={partner.logo} alt={partner.name} className="h-24 object-cover" />
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
