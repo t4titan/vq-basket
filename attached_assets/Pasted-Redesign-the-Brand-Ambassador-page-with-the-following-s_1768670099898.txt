@@ -1,0 +1,140 @@
+Redesign the Brand Ambassador page with the following structure and behavior.
+
+Section 1: Page Header
+
+At the top of the page, add a prominent header:
+
+Header text:
+“Meet Our Brand Ambassadors”
+
+The header should be visually distinct, centered or left-aligned based on the site’s design system, and serve as the introduction to the ambassador section.
+
+Section 2: Ambassador Intro + CTA (Before List)
+
+Directly below the header, add an introductory section with the following text:
+
+“Welcome to the VQBF Brand Ambassador page, where we partner with girls at all levels who have a strong pulse for community and servant leadership.
+
+Our ambassadors represent more than basketball — they embody purpose, impact, and a commitment to uplifting others.
+
+If you believe in using your voice, influence, and passion to make a difference, we’d love to hear from you.”
+
+CTA instruction text (placed immediately before the button):
+
+“Think this is you? Click below to apply and become the next VQBF Brand Ambassador.”
+
+CTA Button:
+
+Label: Apply to Become a Brand Ambassador
+
+Uses the site’s primary button style
+
+Clicking the button opens a modal, not a new page
+
+Add subtle entry animations consistent with the rest of the homepage.
+
+Section 3: Ambassador List (Infinite Scroll)
+
+Below the intro section, display the list of brand ambassadors.
+
+List behavior:
+
+Implement infinite scrolling
+
+Load ambassadors in paginated batches as the user scrolls
+
+Use a lightweight loading indicator while fetching more data
+
+Prevent layout shifts during loading
+
+Layout:
+
+Responsive grid layout (mobile → stacked, desktop → multi-column)
+
+Smooth hover and entry transitions
+
+Ambassador Card Requirements
+
+Each ambassador card should display information structured exactly like the reference image:
+
+Ambassador image (primary visual focus)
+
+Name
+
+Short bio / profile description
+
+Basketball background & achievements
+
+Current team or affiliation
+
+Social media handle(s) with platform icons (where available)
+
+Cards should be clean, readable, and visually balanced between image and text.
+
+Section 4: Ambassador Registration Modal
+
+When the CTA button is clicked, open a modal form for ambassador registration.
+
+Modal behavior:
+
+Centered modal with backdrop
+
+Scrollable content if form exceeds viewport height
+
+Closeable via close button or outside click
+
+Form fields to collect:
+
+Personal Information
+
+Full name
+
+Email address
+
+Phone number
+
+Location (City / Country)
+
+Basketball / Ambassador Information
+
+Current team or affiliation
+
+Short bio / background
+
+Why they want to be a VQBF Brand Ambassador
+
+Social Media Accounts (collect 4–5 total):
+
+Instagram
+
+TikTok
+
+Facebook
+
+Snapchat
+
+Twitter (X)
+
+Social media fields should be optional but clearly labeled.
+
+Form UX:
+
+Clear field labels
+
+Validation for required fields
+
+Submit button with loading state
+
+Success feedback after submission
+
+General UX & Performance Guidelines
+
+Ensure full responsiveness across devices
+
+Maintain accessibility (labels, focus states, readable contrast)
+
+Animations should be subtle and not re-trigger excessively
+
+Infinite scroll should be performant and smooth
+
+The final page should guide users from introduction → inspiration → community → action in a clear and engaging flow.
