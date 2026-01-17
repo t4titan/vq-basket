@@ -43,6 +43,36 @@
   --font-display: 'Outfit', sans-serif;
 }
 
+.dark {
+  --background: 220 35% 10%;
+  --foreground: 0 0% 98%;
+
+  --card: 220 35% 12%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 220 35% 12%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 15 72% 49%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 220 35% 18%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 220 35% 15%;
+  --muted-foreground: 220 10% 65%;
+
+  --accent: 45 90% 55%;
+  --accent-foreground: 222 47% 11%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 220 35% 20%;
+  --input: 220 35% 20%;
+  --ring: 15 72% 49%;
+}
+
 @layer base {
   * {
     @apply border-border;

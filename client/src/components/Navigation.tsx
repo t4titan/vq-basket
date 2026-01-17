@@ -57,7 +57,7 @@ export function Navigation() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-border shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center space-x-3 z-50">
@@ -74,12 +74,12 @@ export function Navigation() {
             <NavigationMenu>
               <NavigationMenuList className="gap-2">
                 {menuItems.map((item) => (
-                  <NavigationMenuItem key={item.label}>
+                  <NavigationMenuItem key={item.label} value={item.label}>
                     <NavigationMenuTrigger className="bg-transparent text-secondary hover:text-primary transition-colors h-auto py-2">
                       {item.label}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid w-[200px] gap-2 p-4 bg-white">
+                      <ul className="grid w-[200px] gap-2 p-4 bg-popover text-popover-foreground">
                         {item.sublinks.map((sub) => (
                           <li key={sub.href}>
                             <NavigationMenuLink asChild>
