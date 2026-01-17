@@ -9,8 +9,37 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import Autoplay from "embla-carousel-autoplay";
 
 export default function Home() {
+  
+  const mockGalleryItems = [
+    {
+      id: 1,
+      title: "Training Session",
+      imageUrl: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609590-scaled.jpg",
+    },
+    {
+      id: 2,
+      title: "Community Outreach",
+      imageUrl: "https://vqbasketballfoundation.org/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-05-at-21.31.12-1-768x1024.jpeg",
+    },
+    {
+      id: 3,
+      title: "Tournament Day",
+      imageUrl: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-16-at-06.32.23.jpeg",
+    },
+    {
+      id: 4,
+      title: "Team Moments",
+      imageUrl: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-16-at-06.31.59.jpeg",
+    },
+  ];
+
   const { data: events } = useEvents();
-  const { data: galleryItems } = useGallery();
+  const { data: galleryItemsFromDb } = useGallery();
+
+  const galleryItems =
+    galleryItemsFromDb && galleryItemsFromDb.length > 0
+      ? galleryItemsFromDb
+      : mockGalleryItems;
 
   const partners = [
     { name: "Partner 1", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&q=40" },
@@ -39,19 +68,29 @@ export default function Home() {
         </div>
 
         <div className="container-custom relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8 text-center lg:text-left"
-          >
-            <h1 className="text-5xl text-primary lg:text-7xl font-serif font-bold leading-tight">
+          <div className="space-y-8 text-center lg:text-left">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-5xl text-primary lg:text-7xl font-serif font-bold leading-tight"
+            >
               More Than <span className="text-white">A Game</span>.
-            </h1>
-            <p className="text-xl text-white/80 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-xl text-white/80 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+            >
               We empower young women to become leaders on and off the court through mentorship, education, and community service.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            </motion.p>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
               <Link href="/programs">
                 <Button className="btn-primary text-lg px-8 py-6 rounded-full w-full sm:w-auto">
                   Our Programs
@@ -62,8 +101,8 @@ export default function Home() {
                   Learn More
                 </Button>
               </Link>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
           
           <motion.div
              initial={{ opacity: 0, scale: 0.9 }}
@@ -89,7 +128,13 @@ export default function Home() {
       {/* About Snippet Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
             <div>
               <span className="text-primary font-bold tracking-wider uppercase text-sm">Who We Are</span>
               <h2 className="text-4xl md:text-5xl font-serif text-secondary mt-2 mb-6">Building Champions for Life</h2>
@@ -104,30 +149,60 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4 pt-12">
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg"
+                >
                   <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-16-at-06.32.25-1-2048x1603.jpeg" className="w-full h-full object-cover" alt="About VQ 1" />
-                </div>
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="aspect-square rounded-2xl overflow-hidden shadow-lg"
+                >
                   <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609719-1536x1019.jpg" className="w-full h-full object-cover" alt="About VQ 2" />
-                </div>
+                </motion.div>
               </div>
               <div className="space-y-4">
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="aspect-square rounded-2xl overflow-hidden shadow-lg"
+                >
                   <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609681-1440x2048.jpg" className="w-full h-full object-cover" alt="About VQ 3" />
-                </div>
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg"
+                >
                   <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-16-at-06.32.22-1.jpeg" className="w-full h-full object-cover" alt="About VQ 4" />
-                </div>
+                </motion.div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Visioneer Message Section */}
       <section className="section-padding bg-secondary text-white">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid lg:grid-cols-2 gap-12 items-center mb-16"
+          >
             <div className="space-y-6">
               <span className="text-primary font-bold tracking-wider uppercase text-sm">Vision & Faith</span>
               <h2 className="text-4xl md:text-5xl font-serif">A Message from Visioneer</h2>
@@ -151,70 +226,7 @@ export default function Home() {
                 allowFullScreen
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm">Our Mission</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-secondary mt-2 mb-6">Empowering Through Basketball</h2>
-            <p className="text-lg text-muted-foreground">
-              We are committed to providing more than just sports training; we are building a foundation for life.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-background p-8 rounded-3xl border border-border hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
-                <Trophy className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
-              </div>
-              <h3 className="text-2xl font-serif font-bold text-secondary mb-4">Provide Opportunities</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Offer free basketball programs to girls from underserved communities, helping them develop athletic skills, teamwork, and discipline.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-background p-8 rounded-3xl border border-border hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
-                <Heart className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
-              </div>
-              <h3 className="text-2xl font-serif font-bold text-secondary mb-4">Provide a Safe Haven</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Offer structured, engaging basketball programs that provide a positive alternative to life on the streets, fostering a safe and nurturing environment where girls can thrive.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-background p-8 rounded-3xl border border-border hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
-                <Users className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
-              </div>
-              <h3 className="text-2xl font-serif font-bold text-secondary mb-4">Develop Skills and Character</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Teach basketball fundamentals and teamwork to build physical fitness, discipline, confidence, and leadership skills, helping participants reach their full potential both on and off the court.
-              </p>
-            </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -233,14 +245,21 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {galleryItems?.slice(0, 4).map((item, i) => (
-              <div key={item.id} className={`aspect-square rounded-2xl overflow-hidden shadow-md group ${i % 3 === 0 ? 'md:col-span-2 md:row-span-2 md:aspect-auto' : ''}`}>
+            {mockGalleryItems?.slice(0, 4).map((item, i) => (
+              <motion.div 
+                key={item.id} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className={`aspect-square rounded-2xl overflow-hidden shadow-md group ${i % 3 === 0 ? 'md:col-span-2 md:row-span-2 md:aspect-auto' : ''}`}
+              >
                 <img 
                   src={item.imageUrl} 
                   alt={item.title || "Gallery Item"} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-              </div>
+              </motion.div>
             ))}
             {!galleryItems?.length && (
               [1,2,3,4].map((i) => (
@@ -254,7 +273,13 @@ export default function Home() {
       {/* Partner With Us Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="bg-primary rounded-3xl p-12 text-center text-white mb-20 shadow-xl relative overflow-hidden">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-primary rounded-3xl p-12 text-center text-white mb-20 shadow-xl relative overflow-hidden"
+          >
             <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
             <div className="relative z-10">
               <h2 className="text-4xl font-serif mb-6">Partner With Us</h2>
@@ -267,7 +292,7 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-          </div>
+          </motion.div>
 
           <div className="text-center mb-10">
             <h3 className="text-2xl font-serif text-secondary opacity-60">Supported by Industry Leaders</h3>
@@ -275,7 +300,7 @@ export default function Home() {
           
           <Carousel
             opts={{ align: "start", loop: true }}
-            plugins={[Autoplay({ delay: 3000 })]}
+            plugins={[Autoplay({ delay: 2000 })]}
             className="w-full"
           >
             <CarouselContent className="-ml-4">
@@ -294,7 +319,13 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-24 bg-primary text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/basketball.png')] opacity-10"></div>
-        <div className="container-custom relative z-10 text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="container-custom relative z-10 text-center"
+        >
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Join the Movement</h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-10">
             Whether you want to play, volunteer, or donate, your support helps us create future leaders.
@@ -311,7 +342,7 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-        </div>
+        </motion.div>
       </section>
     </div>
   );
