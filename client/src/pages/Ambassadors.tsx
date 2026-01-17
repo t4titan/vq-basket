@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useTeamMembers } from "@/hooks/use-team";
 import { SiInstagram } from "react-icons/si";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Ambassadors() {
   const { data: team } = useTeamMembers();
@@ -15,7 +17,7 @@ export default function Ambassadors() {
         </p>
       </div>
 
-      <div className="grid gap-12 max-w-5xl mx-auto">
+      <div className="grid gap-12 max-w-5xl mx-auto mb-24">
         {ambassadors?.map((ambassador) => (
           <motion.div 
             key={ambassador.id}
@@ -57,6 +59,47 @@ export default function Ambassadors() {
           </div>
         )}
       </div>
+
+      {/* Ambassador CTA Section */}
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="max-w-4xl mx-auto"
+      >
+        <div className="bg-secondary rounded-3xl p-10 md:p-16 text-center text-white shadow-2xl relative overflow-hidden">
+          {/* Subtle background pattern/glow */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+          
+          <div className="relative z-10 space-y-8">
+            <div className="space-y-6 text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+              <p className="font-serif italic">
+                “Welcome to the VQBF Brand Ambassador page, where we partner with girls at all levels who have a strong pulse for community and servant leadership.”
+              </p>
+              <p>
+                Our ambassadors represent more than basketball — they embody purpose, impact, and a commitment to uplifting others.
+              </p>
+              <p>
+                If you believe in using your voice, influence, and passion to make a difference, we’d love to hear from you.
+              </p>
+            </div>
+
+            <div className="pt-8 border-t border-white/10 space-y-6">
+              <p className="text-xl font-medium text-white/80">
+                Think this is you? Click below to apply and become the next VQBF Brand Ambassador.
+              </p>
+              
+              <Link href="/contact">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-10 h-16 text-lg font-bold shadow-lg hover:scale-105 transition-all">
+                  Apply to Become a Brand Ambassador
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </motion.section>
     </div>
   );
 }

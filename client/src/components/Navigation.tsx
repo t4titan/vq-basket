@@ -91,7 +91,7 @@ export function Navigation() {
                       {item.label}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid w-[200px] gap-2 p-4">
+                      <ul className="grid w-[200px] gap-2 p-4 bg-white">
                         {item.sublinks.map((sub) => (
                           <li key={sub.href}>
                             <NavigationMenuLink asChild>
