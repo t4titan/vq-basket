@@ -1,0 +1,84 @@
+Redesign the Brand Ambassador page with the following structure and behavior.
+
+Section 1: Page Header
+
+At the top of the page, add a prominent header:
+
+Header text:
+“Meet Our Brand Ambassadors”
+
+The header should be visually distinct and serve as the introduction to the ambassador section.
+
+Section 2: Ambassador Intro + CTA (Before List)
+
+Directly below the header, add an introductory section with the following text:
+
+“Welcome to the VQBF Brand Ambassador page, where we partner with girls at all levels who have a strong pulse for community and servant leadership.
+
+Our ambassadors represent more than basketball — they embody purpose, impact, and a commitment to uplifting others.
+
+If you believe in using your voice, influence, and passion to make a difference, we’d love to hear from you.”
+
+CTA instruction text (placed immediately before the button):
+
+“Think this is you? Click below to apply and become the next VQBF Brand Ambassador.”
+
+CTA Button:
+
+Label: Apply to Become a Brand Ambassador
+
+Uses the site’s primary button style
+
+Navigates to a dedicated application page (not a modal)
+
+Add subtle entry animations consistent with the site’s design system.
+
+Section 3: Ambassador List (Paginated)
+
+Below the intro section, display the list of brand ambassadors.
+
+Pagination approach (recommended over infinite scrolling):
+
+Use server-side or API-based pagination
+
+Display a fixed number of ambassadors per page (e.g., 9–12)
+
+Provide Next / Previous buttons or numbered page controls
+
+Maintain scroll position when navigating between pages
+
+Pagination is preferred to improve:
+
+Performance
+
+Accessibility
+
+SEO
+
+User control over navigation
+
+Ambassador Card Requirements
+
+Each ambassador card should include:
+
+Ambassador image
+
+Full name
+
+Short bio or profile summary
+
+Basketball background or achievements
+
+Current team or affiliation
+
+Social media handle(s) with platform icons (where available)
+
+Cards should be displayed in a responsive grid:
+
+Mobile: single column
+
+Tablet: two columns
+
+Desktop: three or more columns
+
+Include subtle hover effects and consistent spacing.
