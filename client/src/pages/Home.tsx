@@ -58,12 +58,15 @@ export default function Home() {
       : mockGalleryItems;
 
   const partners = [
-    { name: "Partner 1", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&q=40" },
-    { name: "Partner 2", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&q=40" },
-    { name: "Partner 3", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&q=40" },
-    { name: "Partner 4", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&q=40" },
-    { name: "Partner 5", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&q=40" },
-    { name: "Partner 6", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&q=40" },
+    { name: "Partner 1", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/1.png" },
+    { name: "Partner 2", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/08/unnamed.png" },
+    { name: "Partner 3", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/2.png" },
+    { name: "Partner 4", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/3.png" },
+    { name: "Partner 5", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/4.png" },
+    { name: "Partner 6", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/5.png" },
+    { name: "Partner 5", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/6.png" },
+    { name: "Partner 6", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/7.png" },
+    { name: "Partner 6", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-22-at-15.03.59.jpeg" },
   ];
 
   return (
@@ -333,9 +336,15 @@ export default function Home() {
             <CarouselContent className="-ml-4">
               {partners.map((partner, index) => (
                 <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/4 lg:basis-1/6">
-                  <div className="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                  <motion.div 
+                    initial={{ scale: 1, filter: "grayscale(0%)" }}
+                    whileInView={{ scale: 1.2, filter: "grayscale(100%)" }}
+                    viewport={{ margin: "-45% 0px -45% 0px" }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="p-4 flex items-center justify-center transition-all"
+                  >
                     <img src={partner.logo} alt={partner.name} className="h-12 object-contain" />
-                  </div>
+                  </motion.div>
                 </CarouselItem>
               ))}
             </CarouselContent>
