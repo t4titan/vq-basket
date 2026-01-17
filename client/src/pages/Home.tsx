@@ -66,48 +66,24 @@ export default function Home() {
     { name: "Partner 6", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop&q=40" },
   ];
 
-  const heroImages = [
-    "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609554-2-1536x1025.jpg",
-    "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609590-scaled.jpg",
-    "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-16-at-06.32.23.jpeg",
-    "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609681-1440x2048.jpg"
-  ];
-
-  const [bgIndex, setBgIndex] = useState(0);
-
-  useEffect(() => {
-    const bgTimer = setInterval(() => {
-      setBgIndex((prev) => (prev + 1) % heroImages.length);
-    }, 6000);
-    return () => clearInterval(bgTimer);
-  }, []);
-
   return (
     <div className="w-full overflow-hidden">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center bg-secondary text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={bgIndex}
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.5 }}
-              className="absolute inset-0"
-            >
-              <img 
-                src={heroImages[bgIndex]} 
-                alt="Impact Moment" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-secondary/60" />
-            </motion.div>
-          </AnimatePresence>
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/40 to-transparent z-10" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] -translate-x-1/2 translate-y-1/2" />
         </div>
 
-        <div className="container-custom relative z-20 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="absolute inset-0 z-0 opacity-20">
+          <img 
+            src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609554-2-1536x1025.jpg" 
+            alt="Basketball Team Huddle" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        <div className="container-custom relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 text-center lg:text-left">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
