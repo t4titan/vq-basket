@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Trophy, Users, Heart, Calendar, Image as ImageIcon } from "lucide-react";
@@ -9,6 +10,21 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import Autoplay from "embla-carousel-autoplay";
 
 export default function Home() {
+  const [statIndex, setStatIndex] = useState(0);
+
+  const heroStats = [
+    { value: "500+", label: "Young athletes empowered through our programs since 2020." },
+    { value: "12", label: "States across Nigeria reached with our grassroots initiatives." },
+    { value: "100%", label: "Scholarship support for our most dedicated student-athletes." },
+    { value: "25+", label: "Community tournaments organized to foster local talent." }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setStatIndex((prev) => (prev + 1) % heroStats.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
   
   const mockGalleryItems = [
     {
@@ -92,12 +108,12 @@ export default function Home() {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <Link href="/programs">
-                <Button className="btn-primary text-lg px-8 py-6 rounded-full w-full sm:w-auto">
+                <Button className="btn-primary text-lg px-8 py-3 rounded-full w-full sm:w-auto">
                   Our Programs
                 </Button>
               </Link>
               <Link href="/about">
-                <Button variant="outline" className="text-lg px-8 py-6 rounded-full w-full sm:w-auto bg-transparent border-white text-white hover:bg-white hover:text-secondary">
+                <Button variant="outline" className="text-lg px-8 py-3 rounded-full w-full sm:w-auto bg-transparent border-white text-white hover:bg-white hover:text-secondary">
                   Learn More
                 </Button>
               </Link>
@@ -117,9 +133,20 @@ export default function Home() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 z-20 bg-white text-secondary p-6 rounded-2xl shadow-xl max-w-xs">
-              <p className="font-serif font-bold text-2xl text-primary">500+</p>
-              <p className="font-medium text-sm">Young athletes empowered through our programs since 2020.</p>
+            {/* Impact Stats */}
+            <div className="absolute -bottom-6 -left-6 z-20 bg-white text-secondary p-6 rounded-2xl shadow-xl max-w-xs min-h-[140px] flex flex-col justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={statIndex}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <p className="font-serif font-bold text-2xl text-primary">{heroStats[statIndex].value}</p>
+                  <p className="font-medium text-sm text-secondary/80">{heroStats[statIndex].label}</p>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </motion.div>
         </div>
