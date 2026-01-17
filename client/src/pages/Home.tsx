@@ -32,7 +32,7 @@ export default function Home() {
 
         <div className="absolute inset-0 z-0 opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1544919978-ddb7105fb2c3?auto=format&fit=crop&q=80" 
+            src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609554-2-1536x1025.jpg" 
             alt="Basketball Team Huddle" 
             className="w-full h-full object-cover"
           />
@@ -45,8 +45,8 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="space-y-8 text-center lg:text-left"
           >
-            <h1 className="text-5xl lg:text-7xl font-serif font-bold leading-tight">
-              More Than <span className="text-primary">A Game</span>.
+            <h1 className="text-5xl text-primary lg:text-7xl font-serif font-bold leading-tight">
+              More Than <span className="text-white">A Game</span>.
             </h1>
             <p className="text-xl text-white/80 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               We empower young women to become leaders on and off the court through mentorship, education, and community service.
@@ -105,18 +105,18 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4 pt-12">
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
-                  <img src="https://images.unsplash.com/photo-1544919978-ddb7105fb2c3?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="About VQ 1" />
+                  <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-16-at-06.32.25-1-2048x1603.jpeg" className="w-full h-full object-cover" alt="About VQ 1" />
                 </div>
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
-                  <img src="https://images.unsplash.com/photo-1519766304800-096cdef43329?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="About VQ 2" />
+                  <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609719-1536x1019.jpg" className="w-full h-full object-cover" alt="About VQ 2" />
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
-                  <img src="https://images.unsplash.com/photo-1544919978-ddb7105fb2c3?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="About VQ 3" />
+                  <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609681-1440x2048.jpg" className="w-full h-full object-cover" alt="About VQ 3" />
                 </div>
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
-                  <img src="https://images.unsplash.com/photo-1519766304800-096cdef43329?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="About VQ 4" />
+                  <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-16-at-06.32.22-1.jpeg" className="w-full h-full object-cover" alt="About VQ 4" />
                 </div>
               </div>
             </div>
@@ -151,6 +151,69 @@ export default function Home() {
                 allowFullScreen
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-primary font-bold tracking-wider uppercase text-sm">Our Mission</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-secondary mt-2 mb-6">Empowering Through Basketball</h2>
+            <p className="text-lg text-muted-foreground">
+              We are committed to providing more than just sports training; we are building a foundation for life.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-background p-8 rounded-3xl border border-border hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                <Trophy className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+              </div>
+              <h3 className="text-2xl font-serif font-bold text-secondary mb-4">Provide Opportunities</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Offer free basketball programs to girls from underserved communities, helping them develop athletic skills, teamwork, and discipline.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-background p-8 rounded-3xl border border-border hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                <Heart className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+              </div>
+              <h3 className="text-2xl font-serif font-bold text-secondary mb-4">Provide a Safe Haven</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Offer structured, engaging basketball programs that provide a positive alternative to life on the streets, fostering a safe and nurturing environment where girls can thrive.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-background p-8 rounded-3xl border border-border hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                <Users className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+              </div>
+              <h3 className="text-2xl font-serif font-bold text-secondary mb-4">Develop Skills and Character</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Teach basketball fundamentals and teamwork to build physical fitness, discipline, confidence, and leadership skills, helping participants reach their full potential both on and off the court.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>

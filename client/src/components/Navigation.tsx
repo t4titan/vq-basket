@@ -1,8 +1,8 @@
 import { Link, useLocation } from "wouter";
 import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Heart } from "lucide-react";
-import { useState } from "react";
+import { Menu, X, Heart, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import logoImg from "@assets/vq_1768547763009.png";
@@ -20,6 +20,11 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
   const { user } = useAuth();
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
+
+  const toggleAccordion = (label: string) => {
+    setOpenAccordion(prev => (prev === label ? null : label));
+  };
 
   const isActive = (path: string) => location === path;
 
@@ -27,6 +32,7 @@ export function Navigation() {
     {
       label: "About Us",
       sublinks: [
+        { href: "/about", label: "About Us" },
         { href: "/impact", label: "Impact" },
         { href: "/team", label: "Meet the Team" },
         { href: "/ambassadors", label: "Brand Ambassadors" },
@@ -50,9 +56,20 @@ export function Navigation() {
   ];
 
   const links = [
-    { href: "/blog", label: "News" },
+    { href: "/blog", label: "Blogs and News" },
     { href: "/contact", label: "Contact" },
   ];
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-border shadow-sm">
@@ -139,28 +156,56 @@ export function Navigation() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 top-20 bg-background z-40 lg:hidden overflow-y-auto"
+            className="w-full absolute top-20 bg-background z-[999] lg:hidden overflow-y-auto"
           >
             <div className="container-custom py-8 flex flex-col gap-8">
-              {menuItems.map((item) => (
+              {menuItems.map((item) =>  {
+            
+            const isAccordionOpen = openAccordion === item.label;
+            
+            return (
                 <div key={item.label} className="space-y-4">
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground">{item.label}</h3>
-                  <div className="grid gap-4 pl-4">
-                    {item.sublinks.map((sub) => (
-                      <Link
-                        key={sub.href}
-                        href={sub.href}
-                        onClick={() => setIsOpen(false)}
-                        className={`text-xl font-serif font-bold ${
-                          isActive(sub.href) ? "text-primary" : "text-secondary"
-                        }`}
+                  <h3 
+                    onClick={() => toggleAccordion(item.label)}
+                    className="text-[12px] font-bold flex items-center gap-4 cursor-pointer uppercase tracking-wider text-secondary">{item.label}
+                    <span
+                      className={`transition-transform duration-200 ${
+                        isAccordionOpen ? "rotate-180" : ""
+                      }`}
+                    >
+                      <ChevronDown size={14} />
+                    </span>
+                  </h3>
+                  <AnimatePresence initial={false}>
+                    {isAccordionOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: "easeOut" }}
+                        className="overflow-hidden pl-4"
                       >
-                        {sub.label}
-                      </Link>
-                    ))}
-                  </div>
+                        <div className="grid gap-3 pt-2">
+                          {item.sublinks.map((sub) => (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              onClick={() => setIsOpen(false)}
+                              className={`text-[12px] font-serif font-semibold ${
+                                isActive(sub.href)
+                                  ? "text-primary"
+                                  : "text-muted-foreground"
+                              }`}
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
-              ))}
+              )})}
               
               <div className="h-px bg-border my-2" />
               
@@ -169,7 +214,7 @@ export function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`text-2xl font-serif font-bold ${
+                  className={`text-[12px] font-serif font-bold uppercase ${
                     isActive(link.href) ? "text-primary" : "text-secondary"
                   }`}
                 >
@@ -185,7 +230,7 @@ export function Navigation() {
                 </Link>
               )}
               <Link href="/donate" onClick={() => setIsOpen(false)}>
-                <Button className="w-full btn-primary text-lg py-6 mt-4">
+                <Button className="w-full btn-primary text-[12px] py-2 mt-4">
                   Donate Now
                 </Button>
               </Link>
