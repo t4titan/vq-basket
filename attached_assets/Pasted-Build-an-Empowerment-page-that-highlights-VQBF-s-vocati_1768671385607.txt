@@ -1,0 +1,173 @@
+Build an Empowerment page that highlights VQBF’s vocational training programs for young girls and clearly communicates the journey from training to empowerment.
+
+The page should be inspirational, informative, and visually rich, with dedicated sections for images and real impact stories.
+
+Section 1: Page Hero
+
+Create a hero section at the top of the page with:
+
+Headline:
+“Empowering Girls Through Skills, Opportunity, and Support”
+
+Subtext:
+“We equip young girls with practical vocational skills and empower them with the tools, resources, and confidence to build sustainable livelihoods.”
+
+Hero Image Area:
+
+Large image or image carousel
+
+Images showing girls during training sessions (sewing, fashion design, hair making)
+
+Optional overlay or soft gradient for text readability
+
+Section 2: Our Empowerment Approach
+
+Introduce how the empowerment program works in simple steps.
+
+Section title:
+“Our Empowerment Approach”
+
+Display the steps in a horizontal flow or stacked cards:
+
+Vocational Training
+Young girls are trained in practical, income-generating skills.
+
+Skill Development & Mentorship
+Participants receive hands-on guidance, mentorship, and continuous assessment.
+
+Completion & Evaluation
+Trainees are evaluated upon successful completion of the program.
+
+Empowerment & Support
+Successful trainees are empowered with cash support, tools, materials, and starter items.
+
+Visual support:
+
+Icons or illustrations for each step
+
+Optional supporting images under or beside the steps
+
+Section 3: Vocational Training Programs
+
+Highlight the specific vocational skills offered.
+
+Section title:
+“Vocational Training Programs”
+
+Display programs as cards in a responsive grid.
+
+Each program card should include:
+
+Program image
+
+Program title
+
+Short description
+
+Programs to display:
+
+Sewing
+
+Fashion Design
+
+Hair Making / Hair Styling
+
+Image space:
+
+Each card must support a featured image
+
+Images should show real training environments where possible
+
+Section 4: Empowerment After Training
+
+Explain what happens after successful completion.
+
+Section title:
+“Empowerment After Completion”
+
+Content points:
+
+Cash empowerment to support business startup
+
+Provision of tools and materials (e.g., sewing machines, fabrics, hair kits)
+
+Starter items to begin immediate income generation
+
+Layout:
+
+Text on one side
+
+Image gallery or stacked images on the other side
+
+Section 5: Impact & Success Stories
+
+Showcase real outcomes from the program.
+
+Section title:
+“Impact & Success Stories”
+
+Display testimonial or story cards with:
+
+Trainee photo
+
+Name (optional)
+
+Training completed
+
+Short success story or quote
+
+Image support:
+
+Before/after images (optional)
+
+Training completion photos
+
+Section 6: Image Gallery
+
+Dedicated gallery section for visual storytelling.
+
+Section title:
+“Moments From Our Empowerment Programs”
+
+Gallery requirements:
+
+Grid or masonry layout
+
+Supports multiple images
+
+Lightbox or full-view on click (optional)
+
+Optimized for mobile and desktop
+
+Section 7: Call to Action
+
+End the page with a strong CTA.
+
+CTA headline:
+“Join Us in Empowering the Next Generation”
+
+CTA options:
+
+Apply for a vocational training program
+
+Partner or sponsor a trainee
+
+Buttons:
+
+Primary: Apply for Training
+
+Secondary: Support the Program
+
+General Design & UX Guidelines
+
+Fully responsive across all screen sizes
+
+Consistent spacing and typography
+
+Subtle entry animations on scroll
+
+Clear image placeholders where content is not yet available
+
+Accessible text contrast and alt text for images
+
+The page should clearly communicate training → growth → empowerment → impact, supported by strong visuals and human stories.
