@@ -139,7 +139,6 @@ async function seedDatabase() {
       summary: "Launching the Victoria’s Queens Basketball Foundation digital presence.",
       authorId: "admin",
       published: true,
-      publishedAt: new Date(),
     });
   }
 

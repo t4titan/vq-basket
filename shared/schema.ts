@@ -4,7 +4,7 @@ import { z } from "zod";
 import { relations } from "drizzle-orm";
 
 // Export auth models first
-export * from "./models/auth";
+export * from "./models/auth.js";
 
 // Content Tables
 export const posts = pgTable("posts", {

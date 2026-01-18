@@ -12,7 +12,7 @@ import {
   messages,
   insertDonationSchema,
   donations
-} from './schema';
+} from './schema.js';
 
 export const errorSchemas = {
   validation: z.object({
