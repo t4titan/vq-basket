@@ -60,21 +60,21 @@ export default function Ambassadors() {
               <p className="font-serif italic">
                 “Welcome to the VQBF Brand Ambassador page, where we partner with girls at all levels who have a strong pulse for community and servant leadership.”
               </p>
-              <p>
+              <p className="text-[16px]">
                 Our ambassadors represent more than basketball — they embody purpose, impact, and a commitment to uplifting others.
               </p>
-              <p>
+              <p className="text-[16px]">
                 If you believe in using your voice, influence, and passion to make a difference, we’d love to hear from you.
               </p>
             </div>
 
             <div className="pt-8 border-t border-white/10 space-y-6">
-              <p className="text-xl font-medium text-white/80">
+              <p className="text-[16px] font-medium text-white/80">
                 Think this is you? Click below to apply and become the next VQBF Brand Ambassador.
               </p>
 
               <AmbassadorRegistrationModal>
-                <button className="bg-primary hover:bg-primary/90 text-white rounded-full px-10 py-4 text-lg font-bold shadow-lg hover:scale-105 transition-all">
+                <button className="bg-primary hover:bg-primary/90 text-white rounded-full px-10 py-4 text-sm font-bold shadow-lg hover:scale-105 transition-all">
                   Apply to Become a Brand Ambassador
                 </button>
               </AmbassadorRegistrationModal>

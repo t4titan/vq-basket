@@ -1,0 +1,81 @@
+🎯 Objective
+
+Redesign the “What We Have Done” page for the Victoria’s Queens Basketball Foundation that clearly, attractively, and impactfully showcases the foundation’s achievements since its launch in 2024. The new design should be engaging, easy to navigate, visually compelling, and optimized for users who want a clear understanding of the foundation’s impact and accomplishments.
+
+🧠 Core Goals
+
+Tell a Story of Impact
+Highlight how the foundation has empowered girls through basketball and community engagement activities.
+
+Present Achievements Visually
+Use imagery, stats, and calls to action to make the content more engaging.
+
+Encourage Engagement
+Inspire visitors — including potential volunteers, sponsors, and participants — to support or join the foundation.
+
+Maintain Brand Consistency
+Ensure the page aligns with the foundation’s mission, tone, and visual identity.
+
+🧱 Content Structure
+1. Hero Section
+
+Title: “Our Impact & Achievements”
+
+Subheading: “Since 2024, we’ve empowered young girls through basketball, personal development, and competitive excellence.”
+
+Strong visual (hero image or carousel) of participants in action.
+
+Optional: A small impact metric such as “100+ girls trained”, “Champions of WESIE League 2024”, etc.
+
+2. Featured Impact Highlights
+
+Use card-style or timeline sections to present each major activity:
+
+🏀 Basketball Clinics
+
+Summary: Organized a clinic with 100+ young girls from Southwest Nigeria focused on training, life skills, confidence, and teamwork.
+
+Visual: Photos of the clinic in action.
+
+🏆 WESIE League 2024 — Champions
+
+Showcase the team’s journey to becoming WESIE League 2024 champions, competing against 36 state-level teams.
+
+Include key stats and quotes from participants or coaches.
+
+🌍 FIBA Zone 3 Academies Tournament
+
+Highlight progress to the finals and performance against regional academies.
+
+Visual focus on team spirit and competition.
+
+🏀 Edem West Africa Basketball Championship 2025
+
+Showcase participation and visibility at this major West African event in Lagos.
+
+Context about the event and participating teams.
+
+🔥 3ON3 Tournament 2025
+
+Display the foundation-hosted tournament with middle & high school players.
+
+Promote excitement, skill, and community engagement.
+
+3. Interactive Sections
+
+Photo Gallery Slider — photos from each event.
+
+Video Highlights — short clips from training sessions and tournaments.
+
+Impact Metrics — dynamic numbers (participants trained, events hosted, games won, etc.).
+
+4. Call to Action
+
+Prompt users to Join / Support / Volunteer / Donate
+Example button labels:
+
+“Support Our Work”
+
+“Become a Volunteer”
+
+“Sign Up for Upcoming Events”
