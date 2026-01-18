@@ -6,7 +6,7 @@ import {
   type TeamMember, type InsertTeamMember,
   type Message, type InsertMessage,
   type Donation, type InsertDonation
-} from "@shared/schema.js";
+} from "../shared/schema.js";
 import { db } from "./db.js";
 import { eq, desc } from "drizzle-orm";
 
