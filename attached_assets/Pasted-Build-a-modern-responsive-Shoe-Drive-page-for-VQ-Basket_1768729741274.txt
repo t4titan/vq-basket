@@ -1,0 +1,111 @@
+Build a modern, responsive Shoe Drive page for VQ Basketball Foundation, a nonprofit organization empowering young girls through basketball, education, and community programs.
+
+🎯 Page Goal
+
+The purpose of this page is to clearly explain why shoe donations matter, how proper footwear can change the lives of girls who cannot afford shoes, and how individuals, organizations, and partners can donate shoes or provide financial support.
+
+The page should emotionally connect with visitors while making it easy for them to take action.
+
+🧱 Page Structure
+1. Hero Section
+
+Headline: “Every Step Counts”
+
+Subheadline:
+Because no girl should be left behind simply because she doesn’t have a pair of shoes.
+
+Full-width background image of girls playing basketball or walking confidently
+
+Overlay for text readability
+
+Primary CTA button: Donate Shoes
+
+2. Purpose Section — Why Shoes Matter
+
+Section title: “Why Shoes Matter”
+
+Content should explain that shoes are more than footwear:
+
+They protect girls from injuries
+
+Enable participation in basketball and physical activities
+
+Improve confidence, dignity, and self-esteem
+
+Support school attendance and daily mobility
+
+Tone should be empathetic, hopeful, and inspiring.
+
+3. Impact of Shoe Donations
+
+Section title: “How Your Donation Helps”
+
+Bullet points or icon cards highlighting:
+
+Access to sports and training
+
+Increased confidence and sense of belonging
+
+Safer movement to school and community activities
+
+Stronger community engagement and support
+
+4. Ways to Support Section
+
+Section title: “How You Can Support the Shoe Drive”
+Create three clear support options:
+
+👟 Donate Shoes
+
+New or gently used shoes in good condition
+
+Collected and distributed to girls in underserved communities
+
+💛 Sponsor a Shoe Bundle
+
+Financial donations to support shoe collection, cleaning, logistics, and distribution
+
+📣 Spread the Word
+
+Encourage sharing the Shoe Drive on social media and within communities
+
+5. Donation Process Section
+
+Section title: “How to Donate”
+
+Explain that:
+
+Donation drop-off points and shipping instructions will be provided
+
+Shoe drive schedules and locations will be updated on the page
+
+Placeholder text for future logistics updates
+
+6. Call-to-Action Section
+
+Visually distinct CTA section
+
+Headline: “Help Us Take Girls Further”
+
+Supporting text:
+Your donation—new, used, or financial—can change a girl’s journey, one step at a time.
+
+CTA buttons:
+
+Donate Shoes
+
+Support the Shoe Drive
+
+Partner With Us
+
+🎨 Design Requirements
+
+Mobile-first and fully responsive
+
+Clean, nonprofit-focused aesthetic
+
+Warm, hopeful imagery
+
+Clear typography and spacing
+
+Subtle animations (hover states, section transitions)

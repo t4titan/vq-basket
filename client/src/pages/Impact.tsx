@@ -48,7 +48,7 @@ export default function Impact() {
       <section className="relative h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/impact-hero.jpg" 
+            src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609413-scaled.jpg" 
             alt="Impact Hero" 
             className="w-full h-full object-cover brightness-[0.4]"
           />
