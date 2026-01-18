@@ -5,7 +5,7 @@ import { registerAuthRoutes } from "./replit_integrations/auth/routes.js";
 import { setupAuth } from "./replit_integrations/auth/replitAuth.js"
 import { api } from "../shared/routes.js";
 import { z } from "zod";
-import { insertPostSchema, insertEventSchema, insertTeamMemberSchema } from "@shared/schema.js";
+import { insertPostSchema, insertEventSchema, insertTeamMemberSchema } from "../shared/schema.js";
 
 export async function registerRoutes(
   httpServer: Server,
