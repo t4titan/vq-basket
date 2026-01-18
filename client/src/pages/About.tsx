@@ -57,9 +57,9 @@ export default function About() {
       <section className="relative h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/about-hero.jpg" 
+            src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609731-scaled.jpg" 
             alt="About VQBF" 
-            className="w-full h-full object-cover brightness-[0.4]"
+            className="w-full h-full object-cover object-center brightness-[0.4]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </div>

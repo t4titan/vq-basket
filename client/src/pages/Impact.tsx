@@ -41,6 +41,24 @@ const impactAreas = [
   }
 ];
 
+const testimonials = [
+  {
+    quote: "Being part of VQBF has not only improved my basketball skills but has given me the confidence to lead in my school and community.",
+    author: "Faith O.",
+    role: "Athlete & Student"
+  },
+  {
+    quote: "The vocational training I received here has opened doors for me that I never thought possible. I am now helping my family with my skills.",
+    author: "Sarah J.",
+    role: "Vocational Program Participant"
+  },
+  {
+    quote: "VQBF is more than a foundation; it's a family that believes in the potential of every girl, regardless of where they come from.",
+    author: "Coach Ibrahim",
+    role: "Technical Director"
+  }
+];
+
 export default function Impact() {
   return (
     <div className="min-h-screen bg-background">
@@ -152,6 +170,37 @@ export default function Impact() {
               <p className="text-primary font-bold text-2xl">12 States</p>
               <p className="text-xs uppercase font-bold text-muted-foreground">Active Operations</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-secondary text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
+        <div className="container-custom relative z-10">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold">Voice of the <span className="text-primary">Community</span></h2>
+            <p className="text-white/60">Real stories from the girls and mentors we support.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((t, index) => (
+              <motion.div
+                key={t.author}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                className="bg-white/5 backdrop-blur-md p-10 rounded-[2.5rem] border border-white/10 flex flex-col justify-between"
+              >
+                <Heart className="w-10 h-10 text-primary/20 mb-6" />
+                <p className="text-xl font-serif italic mb-8 leading-relaxed">"{t.quote}"</p>
+                <div>
+                  <p className="font-bold text-primary">{t.author}</p>
+                  <p className="text-sm text-white/60">{t.role}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
