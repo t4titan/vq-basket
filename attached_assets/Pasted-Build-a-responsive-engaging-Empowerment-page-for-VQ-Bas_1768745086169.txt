@@ -1,0 +1,96 @@
+Build a responsive, engaging Empowerment page for VQ Basketball Foundation that highlights all empowerment initiatives, especially those beyond basketball training. The page should explain how the foundation equips young girls — especially at the grassroots level — with practical skills and opportunities that foster economic independence, career readiness, and personal growth.
+
+🧱 Page Structure
+1. Hero Section
+
+Headline: Empowering Girls for Life — On and Off the Court
+
+Subheadline: Equipping young girls with skills, education, confidence, and opportunities for a brighter future.
+
+Full-width image of girls participating in an empowerment activity or training.
+
+Primary CTA Button: Support Our Empowerment Programs
+
+2. Why Empowerment Matters
+
+Short paragraph explaining that VQ’s empowerment initiatives go beyond basketball — they prepare girls for sustainable livelihoods, leadership, and community contribution.
+
+Emphasize that many girls in underserved communities lack access to skills training and opportunities.
+
+3. Core Empowerment Programs
+
+Create visually distinct sections or cards for each major program:
+
+🎀 Creative & Entrepreneurial Skill-Building
+
+Description: Hands-on training in hair styling, braiding, beauty techniques, and creative arts.
+
+Focus on income-generating skills that help girls earn and support themselves and their families.
+
+(Optional) Include icon or image thumbnails.
+
+🧵 Vocational Training & Career Readiness
+
+Description: Tailoring and practical skills training to prepare girls for careers or small business ventures.
+
+Highlight confidence-building, hands-on mentorship, and real-world workforce preparation.
+
+🎓 Scholarship & Educational Support
+
+Description: Financial support for academic costs — including fees, exam preparation, and access to educational resources.
+
+Explain how educational support opens doors to further learning and career opportunities.
+
+💼 Entrepreneurial Skills & Career Pathways
+
+Description: Workshops and mentorship on business basics, financial literacy, leadership, and career planning.
+
+Emphasize how these skills help girls start small businesses or succeed in various professions beyond sports.
+
+4. Empowerment in Action
+
+Gallery or slider section showing real photos of girls learning skills (hair training, tailoring classes, classroom shots) to humanize the impact.
+
+Captions describing what’s happening in the image (e.g., Girls learning hair braiding at U&I Beauty Zone training).
+
+5. Impact at the Grassroots Level
+
+Short testimonial-style quotes from participants or trainers (e.g., “This training has helped me start my own tailoring business.”)
+
+Statistics (optional if available later via CMS):
+
+# Girls trained in vocational programs
+
+# Scholarships awarded
+
+Communities reached
+
+Training sessions hosted
+
+6. Call-to-Action / Support Section
+
+Visually distinct section with supporting copy:
+
+Headline: Support Empowerment for More Girls
+
+Text: Your support expands access to vocational training, scholarships, and life-changing opportunities for girls at the grassroots.
+
+Buttons:
+
+Donate to Empowerment Programs
+
+Partner with Us
+
+Volunteer & Mentor
+
+🎨 Design & UX Requirements
+
+Mobile-first, fully responsive layout.
+
+Clean nonprofit style with warm, inspiring color palette.
+
+Section cards for different programs with icons or illustrations.
+
+Large images, storytelling captions, and testimonials to drive engagement.
+
+Accessible typography and intuitive navigation.

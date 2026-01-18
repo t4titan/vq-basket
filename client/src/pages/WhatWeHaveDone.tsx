@@ -14,7 +14,7 @@ const impactHighlights = [
   {
     title: "Basketball Clinics",
     summary: "We organized a basketball clinic that brought together over 100 young girls from across Southwest Nigeria. These clinics provided participants with essential basketball training, life skills development, and a supportive environment to build self-confidence and teamwork.",
-    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2024/05/clinic.jpg",
+    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609697-scaled.jpg",
     icon: Users,
     color: "bg-blue-500"
   },
@@ -22,28 +22,28 @@ const impactHighlights = [
     title: "WESIE League 2024 — Champions",
     summary: "Showcase the team’s journey to becoming WESIE League 2024 champions, competing against 36 state-level teams.",
     stats: "36 Teams Competed",
-    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2024/09/champions.jpg",
+    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-16-at-06.31.59.jpeg",
     icon: Trophy,
     color: "bg-yellow-500"
   },
   {
     title: "FIBA Zone 3 Academies Tournament",
     summary: "Highlight progress to the finals and performance against regional academies. Visual focus on team spirit and competition.",
-    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2024/07/fiba.jpg",
+    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-02-at-03.57.34.jpeg",
     icon: Globe,
     color: "bg-primary"
   },
   {
     title: "Edem West Africa Basketball Championship 2025",
     summary: "Showcase participation and visibility at this major West African event in Lagos. Context about the event and participating teams.",
-    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/edem.jpg",
+    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-16-at-11.52.05-2.jpeg",
     icon: Target,
     color: "bg-secondary"
   },
   {
     title: "3ON3 Tournament 2025",
     summary: "Display the foundation-hosted tournament with middle & high school players. Promote excitement, skill, and community engagement.",
-    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/3on3.jpg",
+    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2025/04/DSC_1350-scaled.jpg",
     icon: Users,
     color: "bg-orange-500"
   }
@@ -85,7 +85,7 @@ export default function WhatWeHaveDone() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/gallery">
-                <Button size="lg" className="rounded-full px-8 h-14 text-lg">
+                <Button size="lg" className="rounded-full px-8 h-14 text-lg border-primary">
                   View Gallery
                 </Button>
               </Link>
@@ -146,9 +146,9 @@ export default function WhatWeHaveDone() {
                     <img 
                       src={highlight.visual} 
                       alt={highlight.title} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors rounded-[2rem]" />
                   </div>
                   <div className="absolute -bottom-6 -right-6 md:-right-10 bg-white dark:bg-card p-4 rounded-2xl shadow-xl flex items-center gap-3">
                     <div className={`w-12 h-12 ${highlight.color} rounded-xl flex items-center justify-center text-white`}>
@@ -199,22 +199,17 @@ export default function WhatWeHaveDone() {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((i) => (
+            {["https://vqbasketballfoundation.org/wp-content/uploads/2025/04/DSC_1438-scaled.jpg", "https://vqbasketballfoundation.org/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-16-at-11.52.05-1.jpeg", "https://vqbasketballfoundation.org/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-02-at-03.57.39-1.jpeg", "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-16-at-06.32.25.jpeg"].map((item, i) => (
               <motion.div
                 key={i}
                 whileHover={{ scale: 0.98 }}
                 className="aspect-square rounded-3xl bg-muted overflow-hidden relative group cursor-pointer"
               >
                 <img 
-                  src={`https://vqbasketballfoundation.org/wp-content/uploads/2024/05/gallery-${i}.jpg`}
+                  src={item}
                   alt={`Gallery ${i}`}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                 />
-                {i === 2 && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-                    <PlayCircle className="w-16 h-16 text-white opacity-80" />
-                  </div>
-                )}
               </motion.div>
             ))}
           </div>
@@ -227,22 +222,22 @@ export default function WhatWeHaveDone() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="bg-secondary rounded-[3rem] p-12 md:p-24 text-center text-white relative overflow-hidden"
+          className="bg-secondary rounded-[3rem] p-12 text-center text-white relative overflow-hidden"
         >
           <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
           <div className="relative z-10 max-w-3xl mx-auto space-y-8">
-            <h2 className="text-5xl md:text-6xl font-serif font-bold">Ready to make a <span className="text-primary">difference?</span></h2>
-            <p className="text-xl md:text-2xl text-white/80">
+            <h2 className="text-5xl md:text-6xl font-serif font-bold text-white">Ready to make a <span className="text-primary">difference?</span></h2>
+            <p className="text-xl md:text-[14px] text-white/80">
               Your support helps us continue our mission of empowering young girls through basketball and personal development.
             </p>
             <div className="flex flex-wrap justify-center gap-6 pt-4">
               <Link href="/donate">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-full px-12 h-16 text-xl font-bold shadow-2xl hover-elevate">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-full px-12 h-12 text-xl font-bold shadow-2xl hover-elevate">
                   Support Our Work
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="border-white/20 hover:bg-white/10 rounded-full px-12 h-16 text-xl font-bold text-white backdrop-blur-sm">
+                <Button size="lg" variant="outline" className="border-white/20 hover:bg-white/10 rounded-full px-12 h-12 text-xl font-bold text-white backdrop-blur-sm">
                   Become a Volunteer
                 </Button>
               </Link>

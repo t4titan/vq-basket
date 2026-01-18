@@ -10,6 +10,7 @@ import {
   PackageCheck
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Globe } from "lucide-react";
 import { Link } from "wouter";
 
 const impactPoints = [
@@ -67,7 +68,7 @@ export default function ShoeDrive() {
       <section className="relative h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/shoe-drive-hero.jpg" 
+            src="https://vqbasketballfoundation.org/wp-content/uploads/2025/06/VQ-SHOE-DRIVE-FLYER-2-1444x2048.jpg" 
             alt="Shoe Drive Hero" 
             className="w-full h-full object-cover brightness-[0.4]"
           />
@@ -122,7 +123,7 @@ export default function ShoeDrive() {
           </motion.div>
           <div className="relative">
             <img 
-              src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/shoes-impact.jpg" 
+              src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609681-scaled.jpg" 
               className="rounded-[3rem] shadow-2xl aspect-[4/5] object-cover" 
               alt="Shoes Matter" 
             />
@@ -245,16 +246,16 @@ export default function ShoeDrive() {
       </section>
 
       {/* 6. Call-to-Action Section */}
-      <section className="py-24 container-custom">
+      <section className="py-12 container-custom">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-primary rounded-[3rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl"
+          className="bg-primary rounded-[3rem] p-12 md:p-8 text-center text-white relative overflow-hidden shadow-2xl"
         >
           <div className="relative z-10 max-w-4xl mx-auto space-y-8">
             <h2 className="text-5xl md:text-6xl font-serif font-bold leading-tight">Help Us Take Girls Further</h2>
-            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed italic">
+            <p className="text-xl md:text-[18px] text-white/90 max-w-2xl mx-auto leading-relaxed italic">
               “Your donation—new, used, or financial—can change a girl’s journey, one step at a time.”
             </p>
             <div className="flex flex-wrap justify-center gap-6 pt-6">
