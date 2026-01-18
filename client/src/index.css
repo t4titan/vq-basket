@@ -78,6 +78,30 @@
   }
 }
 
+@layer utilities {
+  .embla {
+    max-width: 48rem;
+    margin: auto;
+    --slide-height: 19rem;
+    --slide-spacing: 0rem;
+    --slide-size: 25%;
+  }
+  .embla-viewport {
+    overflow: hidden;
+  }
+  .embla-container {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    /* margin-left: calc(var(--slide-spacing) * -1); */
+  }
+  .embla-slide {
+    transform: translate3d(0, 0, 0);
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    /* padding-left: var(--slide-spacing); */
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

@@ -8,12 +8,13 @@ import { useGallery } from "@/hooks/use-gallery";
 import { format } from "date-fns";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import EmblaCarousel from "@/components/EmCarousel"
 
 export default function Home() {
   const [statIndex, setStatIndex] = useState(0);
 
   const heroStats = [
-    { value: "500+", label: "Young athletes empowered through our programs since 2020." },
+    { value: "500+", label: "Young girls empowered through our programs since 2020." },
     { value: "12", label: "States across Nigeria reached with our grassroots initiatives." },
     { value: "100%", label: "Scholarship support for our most dedicated student-athletes." },
     { value: "25+", label: "Community tournaments organized to foster local talent." }
@@ -64,9 +65,9 @@ export default function Home() {
     { name: "Partner 4", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/3.png" },
     { name: "Partner 5", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/4.png" },
     { name: "Partner 6", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/5.png" },
-    { name: "Partner 5", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/6.png" },
-    { name: "Partner 6", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/7.png" },
-    { name: "Partner 6", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-22-at-15.03.59.jpeg" },
+    { name: "Partner 7", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/6.png" },
+    { name: "Partner 8", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/7.png" },
+    { name: "Partner 9", logo: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-22-at-15.03.59.jpeg" },
   ];
 
   return (
@@ -328,21 +329,22 @@ export default function Home() {
             <h3 className="text-2xl font-serif text-secondary opacity-60">Supported by Industry Leaders</h3>
           </div>
           
-          <Carousel
+          {/* <Carousel
             opts={{ align: "start", loop: true }}
             plugins={[Autoplay({ delay: 2000 })]}
             className="w-full"
           >
-            <CarouselContent className="-ml-4">
+            <CarouselContent className="-ml-4 w-full flex gap-0">
               {partners.map((partner, index) => (
                 <CarouselItem key={index} className="pl-2 basis-1/2 md:basis-1/4 lg:basis-1/6">
                   <div className="py-4 px-1 flex items-center justify-center transition-all">
-                    <img src={partner.logo} alt={partner.name} className="h-24 object-cover" />
+                    <img src={partner.logo} alt={partner.name} className="h-32 w-32 object-cover" />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-          </Carousel>
+          </Carousel> */}
+          <EmblaCarousel slides={partners} />
         </div>
       </section>
 

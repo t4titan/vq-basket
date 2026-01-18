@@ -1,12 +1,39 @@
 import { motion } from "framer-motion";
-import { useTeamMembers } from "@/hooks/use-team";
-import { SiInstagram } from "react-icons/si";
-import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+import { SiInstagram, SiTiktok, SiYoutube, SiX, SiFacebook } from "react-icons/si";
+import { AmbassadorRegistrationModal } from "@/components/AmbassadorRegistrationModal";
 
 export default function Ambassadors() {
-  const { data: team } = useTeamMembers();
-  const ambassadors = team?.filter(m => m.type === 'ambassador');
+  const socialPlatforms = [
+    { key: "instagram", icon: SiInstagram, color: "text-[#E4405F]" },
+    { key: "tiktok", icon: SiTiktok, color: "text-black" },
+    { key: "youtube", icon: SiYoutube, color: "text-[#FF0000]" },
+    { key: "twitter", icon: SiX, color: "text-black" },
+    { key: "facebook", icon: SiFacebook, color: "text-[#1877F2]" },
+  ];
+
+  const users = [
+    {
+      id: 1,
+      name: "Tewogbade Mololuwa Ayomide",
+      bio: "My name is Tewogbade Mololuwa Ayomide. I started playing basketball with WarQueens under Coach Peter Akindele and later joined Dolphins Basketball Club. I was born on October 1, 2007. I have represented Nigeria in the U16 tournament in Ghana (2023) and the U18 tournaments in Ivory Coast and South Africa (2024). I am currently a player for Dolphins Women Basketball Club and Victoria’s Queens Basketball Academy. We are proud to be the 2024 WESIE League champions.",
+      imageUrl: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-16-at-7.20.50-AM-1.jpeg",
+      socialMedia: { instagram: "www.instagram.com/mololuwa29" }
+    },
+    {
+      id: 2,
+      name: "Anari Favour Joy",
+      bio: "My name is Anari Favour Joy. I started playing basketball with WarQueens under Coach Peter Akindele and later joined Dolphins Basketball Club. I was born on May 25, 2009. I proudly represented Nigeria in the U17 3×3 Dakar Olympic Games in 2024. That same year, my teammates and I won a trophy for Victoria’s Queens.",
+      imageUrl: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/basketball-player.png",
+      socialMedia: { tiktok: "www.tiktok.com/Fave6335" }
+    },
+    {
+      id: 3,
+      name: "Samuel Gbemisola Elizabeth",
+      bio: "My name is Samuel Gbemisola Elizabeth, I was born on the 20th of August 2007, I’m 5’9, I play as a shooting guard… I’d like to share a little about myself and my journey in basketball… Growing up, I was always curious about trying different activities, but the day I picked up a basketball, everything changed. I started playing basketball 5 years ago under hope for girls academy. At first, I wasn’t very good but I kept practicing and still practicing. Over the time basketball became more than just a sport for me. I have represented Nigeria in the U16 tournament in Ghana (2023) and also in the U18 tournament in Côte d’Ivoire (2024). I am currently playing for dolphins women’s basketball club and Victoria’s queens basketball academy. We are the champions of the 2024 wesie league.",
+      imageUrl: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/basketball-player-1-768x709.png",
+      socialMedia: {}
+    }
+  ];
 
   return (
     <div className="container-custom py-20">
@@ -17,63 +44,18 @@ export default function Ambassadors() {
         </p>
       </div>
 
-      <div className="grid gap-12 max-w-5xl mx-auto mb-24">
-        {ambassadors?.map((ambassador) => (
-          <motion.div 
-            key={ambassador.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-3xl overflow-hidden shadow-xl border border-border flex flex-col md:flex-row items-center p-8 md:p-12 gap-12"
-          >
-            <div className="w-full md:w-2/5 aspect-[4/5] relative rounded-2xl overflow-hidden shadow-lg border-4 border-white">
-              <img 
-                src={ambassador.imageUrl || "https://images.unsplash.com/photo-1544919978-ddb7105fb2c3?auto=format&fit=crop&q=80"} 
-                alt={ambassador.name} 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            <div className="w-full md:w-3/5 space-y-6">
-              <div className="space-y-2">
-                <h3 className="text-3xl font-serif font-bold text-secondary">Meet Our Ambassador</h3>
-                <p className="text-xl font-bold text-primary uppercase tracking-tight">{ambassador.name}</p>
-              </div>
-              
-              <div className="text-lg text-muted-foreground leading-relaxed">
-                <p>{ambassador.bio}</p>
-              </div>
-
-              <div className="flex items-center gap-3 pt-4 border-t border-border">
-                <SiInstagram className="w-6 h-6 text-[#E4405F]" />
-                <span className="font-bold text-secondary hover:text-primary transition-colors cursor-pointer">
-                  {ambassador.name.split(' ')[0].toLowerCase()}{ambassador.id}
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-        
-        {(!ambassadors || ambassadors.length === 0) && (
-          <div className="text-center py-20 bg-muted rounded-3xl border-2 border-dashed">
-            <p className="text-xl text-muted-foreground font-medium">Our ambassadors will be featured here soon.</p>
-          </div>
-        )}
-      </div>
-
-      {/* Ambassador CTA Section */}
       <motion.section 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="max-w-4xl mx-auto"
+        className="max-w-4xl mx-auto mb-12"
       >
-        <div className="bg-secondary rounded-3xl p-10 md:p-16 text-center text-white shadow-2xl relative overflow-hidden">
-          {/* Subtle background pattern/glow */}
+        <div className="bg-secondary rounded-3xl p-10 md:p-6 text-center text-white shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-          
-          <div className="relative z-10 space-y-8">
+
+          <div className="relative z-10 space-y-4">
             <div className="space-y-6 text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
               <p className="font-serif italic">
                 “Welcome to the VQBF Brand Ambassador page, where we partner with girls at all levels who have a strong pulse for community and servant leadership.”
@@ -90,16 +72,66 @@ export default function Ambassadors() {
               <p className="text-xl font-medium text-white/80">
                 Think this is you? Click below to apply and become the next VQBF Brand Ambassador.
               </p>
-              
-              <Link href="/contact">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-10 h-16 text-lg font-bold shadow-lg hover:scale-105 transition-all">
+
+              <AmbassadorRegistrationModal>
+                <button className="bg-primary hover:bg-primary/90 text-white rounded-full px-10 py-4 text-lg font-bold shadow-lg hover:scale-105 transition-all">
                   Apply to Become a Brand Ambassador
-                </Button>
-              </Link>
+                </button>
+              </AmbassadorRegistrationModal>
             </div>
           </div>
         </div>
       </motion.section>
+
+      <div className="grid gap-12 max-w-5xl mx-auto mb-24">
+        {users.map((ambassador) => (
+          <motion.div 
+            key={ambassador.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white rounded-3xl overflow-hidden shadow-xl border border-border flex flex-col md:flex-row items-center p-8 md:p-12 gap-12"
+          >
+            <div className="w-full md:w-2/5 aspect-[4/5] relative rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+              <img 
+                src={ambassador.imageUrl} 
+                alt={ambassador.name} 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            <div className="w-full md:w-3/5 space-y-6">
+              <div className="space-y-2">
+                <h3 className="text-3xl font-serif font-bold text-secondary">Meet Our Ambassador</h3>
+                <p className="text-xl font-bold text-primary uppercase tracking-tight">{ambassador.name}</p>
+              </div>
+              
+              <div className="text-lg text-muted-foreground leading-relaxed">
+                <p>{ambassador.bio}</p>
+              </div>
+
+              <div className="flex items-center gap-4 pt-4 border-t border-border">
+                {socialPlatforms.map(({ key, icon: Icon, color }) => {
+                  const link = (ambassador.socialMedia as any)[key];
+                  if (!link) return null;
+
+                  return (
+                    <motion.a
+                      key={key}
+                      href={link.startsWith("http") ? link : `https://${link}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.2, y: -4 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                    >
+                      <Icon className={`w-6 h-6 ${color} drop-shadow-sm`} />
+                    </motion.a>
+                  );
+                })}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 }
