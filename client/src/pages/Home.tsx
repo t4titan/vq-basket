@@ -6,8 +6,6 @@ import { ArrowRight, Trophy, Users, Heart, Calendar, Image as ImageIcon } from "
 import { useEvents } from "@/hooks/use-events";
 import { useGallery } from "@/hooks/use-gallery";
 import { format } from "date-fns";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 import EmblaCarousel from "@/components/EmCarousel"
 
 export default function Home() {

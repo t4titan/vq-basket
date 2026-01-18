@@ -1,0 +1,101 @@
+Build the impact page now.
+
+🎯 Page Goal
+
+The page should visually and clearly communicate the foundation’s measurable impact using statistics, storytelling, and strong calls to action. It must inspire sponsors and partners to support the foundation’s mission to reach more girls, communities, and states.
+
+🧱 Page Structure
+1. Hero Section
+
+Headline: “Creating Lasting Impact Through Basketball & Empowerment”
+
+Subheadline:
+Empowering young girls across Nigeria with skills, confidence, and opportunities—on and off the court.
+
+Full-width background image showing girls training or competing
+
+Dark overlay for text readability
+
+2. Impact Statistics Section (Primary Focus)
+
+Create a grid of animated stat cards (count-up animation):
+
+Young Girls Trained in Basketball
+
+Girls Empowered with Vocational Skills
+
+Games & Tournaments Organized
+
+Communities Reached
+
+States Covered
+
+Each stat should:
+
+Be large, bold, and visually prominent
+
+Support dynamic values that can be updated easily later
+
+3. Impact Explanation Section
+
+Below the stats, add short descriptive blocks explaining:
+
+Basketball development and mentorship
+
+Vocational and life-skills empowerment
+
+Community engagement and youth development
+
+Use icons or small images for each block.
+
+4. Geographic Reach Section
+
+Include a Nigeria map (SVG or image)
+
+Highlight states reached by the foundation
+
+Caption: “Expanding our reach, one community at a time”
+
+5. Growth & Vision Section
+
+Headline: “We’ve Made Progress — But There’s More to Do”
+
+Content should explain:
+
+Many girls still lack access to sports and empowerment programs
+
+More communities and states need support
+
+Increased funding and partnerships will accelerate impact
+
+Use emotional but professional copy.
+
+6. Sponsorship & Partnership CTA
+
+Prominent call-to-action section with contrasting background color.
+
+Headline: “Partner With Us to Multiply Impact”
+
+Supporting text explaining how sponsorship helps scale programs
+
+Buttons:
+
+Become a Sponsor
+
+Partner With Us
+
+Support Our Mission
+
+Buttons should link to a contact or partnership page.
+
+🎨 Design Requirements
+
+Mobile-first and fully responsive
+
+Clean nonprofit aesthetic
+
+Consistent brand colors and typography
+
+Clear visual hierarchy
+
+Subtle animations for stats and section transitions

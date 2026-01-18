@@ -13,7 +13,7 @@ import { Link } from "wouter";
 const impactHighlights = [
   {
     title: "Basketball Clinics",
-    summary: "Organized clinics with 100+ young girls from Southwest Nigeria focused on training, life skills, confidence, and teamwork.",
+    summary: "We organized a basketball clinic that brought together over 100 young girls from across Southwest Nigeria. These clinics provided participants with essential basketball training, life skills development, and a supportive environment to build self-confidence and teamwork.",
     visual: "https://vqbasketballfoundation.org/wp-content/uploads/2024/05/clinic.jpg",
     icon: Users,
     color: "bg-blue-500"
@@ -63,7 +63,7 @@ export default function WhatWeHaveDone() {
       <section className="relative h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/hero-impact.jpg" 
+            src="https://vqbasketballfoundation.org/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-16-at-11.52.05.jpeg" 
             alt="Our Impact" 
             className="w-full h-full object-cover brightness-50"
           />
@@ -78,7 +78,7 @@ export default function WhatWeHaveDone() {
             className="max-w-3xl"
           >
             <h1 className="text-6xl md:text-7xl font-serif font-bold text-white mb-6">
-              Our Impact & <span className="text-primary">Achievements</span>
+              Our Journey & <span className="text-primary">Achievements</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
               Since 2024, we’ve empowered young girls through basketball, personal development, and competitive excellence.

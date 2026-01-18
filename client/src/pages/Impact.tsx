@@ -5,103 +5,84 @@ import {
   Globe, 
   Target, 
   ArrowRight,
-  PlayCircle
+  TrendingUp,
+  Heart,
+  Briefcase
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
-const impactHighlights = [
+const metrics = [
+  { label: "Young Girls Trained", value: "500+", icon: Users },
+  { label: "Vocational Skills Empowered", value: "200+", icon: Briefcase },
+  { label: "Tournaments Organized", value: "25+", icon: Trophy },
+  { label: "Communities Reached", value: "45+", icon: Target },
+  { label: "States Covered", value: "12", icon: Globe }
+];
+
+const impactAreas = [
   {
-    title: "Basketball Clinics",
-    summary: "Organized clinics with 100+ young girls from Southwest Nigeria focused on training, life skills, confidence, and teamwork.",
-    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2024/05/clinic.jpg",
-    icon: Users,
-    color: "bg-blue-500"
-  },
-  {
-    title: "WESIE League 2024 — Champions",
-    summary: "Showcase the team’s journey to becoming WESIE League 2024 champions, competing against 36 state-level teams.",
-    stats: "36 Teams Competed",
-    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2024/09/champions.jpg",
+    title: "Basketball Development",
+    description: "Intensive training programs focusing on technical skills, sportsmanship, and the discipline required for elite competition.",
     icon: Trophy,
-    color: "bg-yellow-500"
-  },
-  {
-    title: "FIBA Zone 3 Academies Tournament",
-    summary: "Highlight progress to the finals and performance against regional academies. Visual focus on team spirit and competition.",
-    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2024/07/fiba.jpg",
-    icon: Globe,
     color: "bg-primary"
   },
   {
-    title: "Edem West Africa Basketball Championship 2025",
-    summary: "Showcase participation and visibility at this major West African event in Lagos. Context about the event and participating teams.",
-    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/edem.jpg",
-    icon: Target,
+    title: "Vocational & Life Skills",
+    description: "Empowering girls with practical skills including tailoring, computer literacy, and financial management for long-term independence.",
+    icon: Briefcase,
     color: "bg-secondary"
   },
   {
-    title: "3ON3 Tournament 2025",
-    summary: "Display the foundation-hosted tournament with middle & high school players. Promote excitement, skill, and community engagement.",
-    visual: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/3on3.jpg",
-    icon: Users,
-    color: "bg-orange-500"
+    title: "Community Engagement",
+    description: "Building strong support networks through local partnerships and youth leadership development initiatives.",
+    icon: Heart,
+    color: "bg-accent"
   }
-];
-
-const metrics = [
-  { label: "Girls Trained", value: "500+", icon: Users },
-  { label: "Events Hosted", value: "15+", icon: Target },
-  { label: "Championships Won", value: "3", icon: Trophy },
-  { label: "States Covered", value: "12", icon: Globe }
 ];
 
 export default function Impact() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
+      {/* 1. Hero Section */}
       <section className="relative h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/hero-impact.jpg" 
-            alt="Our Impact" 
-            className="w-full h-full object-cover brightness-50"
+            src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/impact-hero.jpg" 
+            alt="Impact Hero" 
+            className="w-full h-full object-cover brightness-[0.4]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </div>
         
-        <div className="container-custom relative z-10">
+        <div className="container-custom relative z-10 text-center md:text-left">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl"
+            className="max-w-4xl"
           >
-            <h1 className="text-6xl md:text-7xl font-serif font-bold text-white mb-6">
-              Our Impact & <span className="text-primary">Achievements</span>
+            <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+              Creating Lasting Impact Through <span className="text-primary">Basketball & Empowerment</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-              Since 2024, we’ve empowered young girls through basketball, personal development, and competitive excellence.
+            <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl">
+              Empowering young girls across Nigeria with skills, confidence, and opportunities—on and off the court.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/gallery">
-                <Button size="lg" className="rounded-full px-8 h-14 text-lg">
-                  View Gallery
+            <div className="flex flex-wrap justify-center md:justify-start gap-4">
+              <Link href="/donate">
+                <Button size="lg" className="rounded-full px-10 h-16 text-lg font-bold shadow-2xl hover-elevate">
+                  Support Our Mission
                 </Button>
               </Link>
-              <div className="flex items-center gap-4 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
-                <span className="text-primary font-bold text-xl">100+</span>
-                <span className="text-white text-sm font-medium">Girls Trained</span>
-              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Impact Metrics */}
-      <section className="py-20 -mt-20 relative z-20">
+      {/* 2. Impact Statistics Section */}
+      <section className="py-24 -mt-24 relative z-20">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {metrics.map((metric, index) => (
               <motion.div
                 key={metric.label}
@@ -109,144 +90,147 @@ export default function Impact() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white dark:bg-card p-8 rounded-3xl shadow-xl border border-border text-center hover-elevate"
+                className="bg-white dark:bg-card p-8 rounded-3xl shadow-2xl border border-border text-center group hover-elevate"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 text-primary">
-                  <metric.icon className="w-6 h-6" />
+                <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-primary transition-transform group-hover:rotate-12">
+                  <metric.icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-4xl font-bold mb-1">{metric.value}</h3>
-                <p className="text-muted-foreground font-medium">{metric.label}</p>
+                <h3 className="text-5xl font-bold mb-2 tracking-tight">{metric.value}</h3>
+                <p className="text-muted-foreground font-medium text-sm leading-tight uppercase tracking-wider">{metric.label}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Highlights */}
+      {/* 3. Impact Explanation Section */}
+      <section className="py-24 container-custom">
+        <div className="grid md:grid-cols-3 gap-12">
+          {impactAreas.map((area, index) => (
+            <motion.div
+              key={area.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+              className="space-y-6 text-center"
+            >
+              <div className={`w-20 h-20 ${area.color} rounded-full flex items-center justify-center mx-auto text-white shadow-xl`}>
+                <area.icon className="w-10 h-10" />
+              </div>
+              <h3 className="text-2xl font-serif font-bold">{area.title}</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {area.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* 4. Geographic Reach Section */}
       <section className="py-24 bg-muted/30">
-        <div className="container-custom">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold">Featured Impact Highlights</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A closer look at the key milestones and events that define our journey.
-            </p>
-          </div>
-
-          <div className="space-y-24">
-            {impactHighlights.map((highlight, index) => (
-              <motion.div
-                key={highlight.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12`}
-              >
-                <div className="w-full md:w-1/2 group relative">
-                  <div className="aspect-video rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white dark:border-card">
-                    <img 
-                      src={highlight.visual} 
-                      alt={highlight.title} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-                  </div>
-                  <div className="absolute -bottom-6 -right-6 md:-right-10 bg-white dark:bg-card p-4 rounded-2xl shadow-xl flex items-center gap-3">
-                    <div className={`w-12 h-12 ${highlight.color} rounded-xl flex items-center justify-center text-white`}>
-                      <highlight.icon className="w-6 h-6" />
-                    </div>
-                    {highlight.stats && (
-                      <div>
-                        <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold">Statistic</p>
-                        <p className="font-bold">{highlight.stats}</p>
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                <div className="w-full md:w-1/2 space-y-6">
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold">
-                    <Trophy className="w-4 h-4" />
-                    Key Achievement
-                  </div>
-                  <h3 className="text-4xl font-serif font-bold leading-tight">{highlight.title}</h3>
-                  <p className="text-xl text-muted-foreground leading-relaxed">
-                    {highlight.summary}
-                  </p>
-                  <Button variant="ghost" className="group p-0 hover:bg-transparent text-primary font-bold text-lg">
-                    Read Story 
-                    <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Interactive Photo/Video Section Placeholder */}
-      <section className="py-24 overflow-hidden">
-        <div className="container-custom">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
-            <div className="space-y-4">
-              <h2 className="text-4xl font-serif font-bold">Moments in Action</h2>
-              <p className="text-xl text-muted-foreground">Catch the energy and passion through our lens.</p>
-            </div>
-            <Link href="/gallery">
-              <Button variant="outline" className="rounded-full px-8">
-                Full Gallery
-              </Button>
-            </Link>
+        <div className="container-custom text-center space-y-12">
+          <div className="max-w-3xl mx-auto space-y-4">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold">Geographic Reach</h2>
+            <p className="text-xl text-muted-foreground">“Expanding our reach, one community at a time”</p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 0.98 }}
-                className="aspect-square rounded-3xl bg-muted overflow-hidden relative group cursor-pointer"
-              >
-                <img 
-                  src={`https://vqbasketballfoundation.org/wp-content/uploads/2024/05/gallery-${i}.jpg`}
-                  alt={`Gallery ${i}`}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                />
-                {i === 2 && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-                    <PlayCircle className="w-16 h-16 text-white opacity-80" />
+          <div className="relative max-w-4xl mx-auto aspect-[4/3] bg-white dark:bg-card rounded-[3rem] shadow-xl p-8 flex items-center justify-center border border-border">
+            {/* Placeholder for Nigeria Map - Using an icon/illustration concept */}
+            <div className="relative w-full h-full flex items-center justify-center opacity-80">
+              <Globe className="w-64 h-64 text-primary/20 absolute" />
+              <div className="grid grid-cols-3 gap-8 relative z-10">
+                {['Lagos', 'Ogun', 'Oyo', 'Osun', 'Ekiti', 'Ondo'].map(state => (
+                  <div key={state} className="flex flex-col items-center gap-2">
+                    <div className="w-4 h-4 bg-primary rounded-full animate-pulse" />
+                    <span className="font-bold text-sm uppercase tracking-widest">{state}</span>
                   </div>
-                )}
-              </motion.div>
-            ))}
+                ))}
+              </div>
+            </div>
+            <div className="absolute bottom-10 right-10 bg-primary/10 px-6 py-4 rounded-2xl border border-primary/20 backdrop-blur-md">
+              <p className="text-primary font-bold text-2xl">12 States</p>
+              <p className="text-xs uppercase font-bold text-muted-foreground">Active Operations</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
+      {/* 5. Growth & Vision Section */}
+      <section className="py-24 container-custom">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <h2 className="text-4xl md:text-5xl font-serif font-bold">We’ve Made Progress — <span className="text-primary">But There’s More to Do</span></h2>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                While we celebrate our achievements since 2024, the reality is that many young girls across Nigeria still lack access to sports and empowerment programs that could change their lives.
+              </p>
+              <p>
+                There are hundreds of communities and more states that need our support. We have the vision and the commitment, but we need the resources to scale.
+              </p>
+              <p className="font-bold text-secondary">
+                Increased funding and strategic partnerships will accelerate our impact, allowing us to reach more girls, faster.
+              </p>
+            </div>
+          </motion.div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-4 pt-12">
+              <img src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/vision-1.jpg" className="rounded-3xl shadow-xl aspect-[3/4] object-cover" alt="Vision 1" />
+              <img src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/vision-2.jpg" className="rounded-3xl shadow-xl aspect-square object-cover" alt="Vision 2" />
+            </div>
+            <div className="space-y-4">
+              <img src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/vision-3.jpg" className="rounded-3xl shadow-xl aspect-square object-cover" alt="Vision 3" />
+              <img src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/vision-4.jpg" className="rounded-3xl shadow-xl aspect-[3/4] object-cover" alt="Vision 4" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Sponsorship & Partnership CTA */}
       <section className="py-24 container-custom">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="bg-secondary rounded-[3rem] p-12 md:p-24 text-center text-white relative overflow-hidden"
+          className="bg-secondary rounded-[4rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-3xl"
         >
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
-          <div className="relative z-10 max-w-3xl mx-auto space-y-8">
-            <h2 className="text-5xl md:text-6xl font-serif font-bold">Ready to make a <span className="text-primary">difference?</span></h2>
-            <p className="text-xl md:text-2xl text-white/80">
-              Your support helps us continue our mission of empowering young girls through basketball and personal development.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 pt-4">
-              <Link href="/donate">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-full px-12 h-16 text-xl font-bold shadow-2xl hover-elevate">
-                  Support Our Work
+          {/* Background Wash */}
+          <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
+          
+          <div className="relative z-10 max-w-4xl mx-auto space-y-10">
+            <div className="space-y-4">
+              <h2 className="text-5xl md:text-7xl font-serif font-bold">Partner With Us to <span className="text-primary">Multiply Impact</span></h2>
+              <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                Your sponsorship helps us scale our programs, provide more scholarships, and build a brighter future for young athletes across Africa.
+              </p>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-6 pt-6">
+              <Link href="/contact">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-12 h-18 text-xl font-bold shadow-2xl hover:scale-105 transition-all">
+                  Become a Sponsor
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="border-white/20 hover:bg-white/10 rounded-full px-12 h-16 text-xl font-bold text-white backdrop-blur-sm">
-                  Become a Volunteer
+                <Button size="lg" variant="outline" className="border-white/30 hover:bg-white/10 text-white rounded-full px-12 h-18 text-xl font-bold backdrop-blur-md shadow-xl">
+                  Partner With Us
                 </Button>
               </Link>
             </div>
+            
+            <Link href="/donate">
+              <Button variant="link" className="text-white/60 hover:text-white text-lg font-medium p-0 h-auto">
+                Or simply support our mission with a donation
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </section>
