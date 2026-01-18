@@ -1,10 +1,11 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
-import { setupAuth, registerAuthRoutes } from "./replit_integrations/auth";
-import { api } from "@shared/routes";
+import { storage } from "./storage.js";
+import { registerAuthRoutes } from "./replit_integrations/auth/routes.js";
+import { setupAuth } from "./replit_integrations/auth/replitAuth.js"
+import { api } from "../shared/routes.js";
 import { z } from "zod";
-import { insertPostSchema, insertEventSchema, insertTeamMemberSchema } from "@shared/schema";
+import { insertPostSchema, insertEventSchema, insertTeamMemberSchema } from "@shared/schema.js";
 
 export async function registerRoutes(
   httpServer: Server,

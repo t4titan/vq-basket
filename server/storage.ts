@@ -1,14 +1,13 @@
 import { 
-  users, posts, events, galleryItems, teamMembers, messages, donations,
-  type User, type InsertUser,
+  posts, events, galleryItems, teamMembers, messages, donations,
   type Post, type InsertPost,
   type Event, type InsertEvent,
   type GalleryItem, type InsertGalleryItem,
   type TeamMember, type InsertTeamMember,
   type Message, type InsertMessage,
   type Donation, type InsertDonation
-} from "@shared/schema";
-import { db } from "./db";
+} from "@shared/schema.js";
+import { db } from "./db.js";
 import { eq, desc } from "drizzle-orm";
 
 export interface IStorage {
