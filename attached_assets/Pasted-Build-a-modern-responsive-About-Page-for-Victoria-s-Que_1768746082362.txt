@@ -1,0 +1,140 @@
+Build a modern, responsive About Page for Victoria’s Queens Basketball Foundation (VQBF) — a nonprofit organization dedicated to empowering young girls through basketball, education, vocational skills, and grassroots development.
+
+🎯 Page Goal
+
+The page should clearly communicate who VQBF is, why it exists, and what it stands for, while building trust with visitors, partners, sponsors, and the community. It should tell the foundation’s story, highlight its mission and vision, and position VQBF as a credible, impact-driven organization.
+
+🧱 Page Structure
+1. Hero Section
+
+Headline: About Victoria’s Queens Basketball Foundation
+
+Subheadline:
+Empowering young girls to rise with confidence, purpose, and opportunity—on and off the court.
+
+Background image showing girls in training, community programs, or empowerment sessions
+
+Subtle overlay for readability
+
+2. Who We Are
+
+Section title: “Who We Are”
+
+Content should explain:
+
+VQBF is a nonprofit organization committed to the holistic development of young girls
+
+The foundation uses basketball as a tool, alongside education and empowerment programs, to create long-term impact
+
+Focus on girls from underserved and grassroots communities
+
+Tone should be inspiring, credible, and human-centered.
+
+3. Our Mission
+
+Section title: “Our Mission”
+
+Mission statement should highlight:
+
+Empowering young girls through basketball, education, and life-changing opportunities
+
+Building confidence, discipline, leadership, and self-belief
+
+Creating pathways for personal, academic, and economic growth
+
+Display this in a visually distinct card or highlighted block.
+
+4. Our Vision
+
+Section title: “Our Vision”
+
+Vision statement should reflect:
+
+A future where every girl has access to opportunity, regardless of background
+
+Confident, skilled, and empowered young women contributing positively to society
+
+Expansion across communities, states, and beyond
+
+5. What We Do
+
+Section title: “What We Do”
+Present this as cards or icon blocks:
+
+Basketball Development
+
+Training, competitions, mentorship, and leadership through sport
+
+Empowerment Programs
+
+Vocational skills (hair making/braiding, tailoring)
+
+Entrepreneurial and life skills
+
+Scholarships and educational support
+
+Community Outreach
+
+Grassroots engagement
+
+Community-based tournaments, clinics, and empowerment initiatives
+
+6. Our Values
+
+Section title: “Our Core Values”
+Highlight values such as:
+
+Empowerment
+
+Discipline & Excellence
+
+Inclusivity & Opportunity
+
+Integrity & Community
+
+Growth & Sustainability
+
+Use icons or minimal illustrations.
+
+7. Impact Mindset
+
+Section title: “Why It Matters”
+
+Explain that:
+
+Many girls face barriers to education, sports, and skill development
+
+VQBF exists to bridge this gap
+
+Every program is designed to create lasting impact, not temporary support
+
+8. Call-to-Action Section
+
+Visually prominent CTA section.
+
+Headline: Be Part of the Impact
+
+Supporting text:
+Together, we can empower more girls, reach more communities, and create lasting change.
+
+CTA Buttons:
+
+Partner With Us
+
+Support Our Mission
+
+Join as a Volunteer
+
+🎨 Design Requirements
+
+Mobile-first and fully responsive
+
+Clean nonprofit aesthetic
+
+Strong typography hierarchy
+
+Warm, authentic imagery
+
+Clear spacing and readability
+
+Subtle animations on scroll
