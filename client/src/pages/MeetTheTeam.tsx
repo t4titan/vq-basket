@@ -57,7 +57,7 @@ export default function MeetTheTeam() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-serif font-bold mb-6"
+            className="text-5xl md:text-7xl font-serif font-bold mb-6 text-white"
           >
             Meet the <span className="text-primary">Team</span>
           </motion.h1>
@@ -91,18 +91,11 @@ export default function MeetTheTeam() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
-                  <div className="flex gap-4">
-                    <Button size="icon" variant="secondary" className="rounded-full w-10 h-10">
-                      <Twitter className="w-4 h-4" />
-                    </Button>
-                    <Button size="icon" variant="secondary" className="rounded-full w-10 h-10">
-                      <Linkedin className="w-4 h-4" />
-                    </Button>
-                  </div>
+                  
                 </div>
               </div>
               <div className="space-y-2 px-2">
-                <h3 className="text-2xl font-serif font-bold text-secondary group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-serif capitalize font-bold text-secondary group-hover:text-primary transition-colors">
                   {member.name}
                 </h3>
                 <p className="text-primary font-bold uppercase tracking-widest text-xs">

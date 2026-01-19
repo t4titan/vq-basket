@@ -27,15 +27,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* Brand & Nonprofit Status */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-md">
-                <span className="text-white font-serif font-bold text-xl">VQ</span>
-              </div>
-              <span className="font-serif font-bold text-xl leading-tight">
-                Victoria's Queens<br />
-                <span className="text-xs font-sans font-normal text-white/70">Basketball Foundation</span>
+            <Link href="/" className="flex items-center space-x-3 z-50">
+              <img src={"https://vqbasketballfoundation.org/wp-content/uploads/2024/12/cropped-cropped-Victoria_s_2-removebg-preview-e1734333881434.png"} alt="VQ Foundation Logo" className="w-12 h-12 object-contain" />
+              <span className="flex flex-col items-start">
+                <h2 className="font-serif font-bold text-xl md:text-2xl text-white leading-tight hidden sm:block">
+                  Victoria's Queens
+                </h2>
+                <p className="text-sm font-sans font-normal text-muted-foreground">Basketball Foundation</p>
               </span>
-            </div>
+            </Link>
             <p className="text-sm text-white/70 leading-relaxed max-w-xs">
               Victoria's Queens Basketball Foundation is a registered 501(c)(3) Nonprofit Organization. | EIN: 33-3667260
             </p>
