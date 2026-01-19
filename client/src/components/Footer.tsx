@@ -1,12 +1,30 @@
 import { Link } from "wouter";
-import { Facebook, Instagram, Mail, Phone, Youtube } from "lucide-react";
+import { Facebook, Instagram, Mail, Phone, Youtube, Send } from "lucide-react";
 import { SiX as XIcon, SiTiktok as TiktokIcon } from "react-icons/si";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 export function Footer() {
+  const { toast } = useToast();
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    
+    toast({
+      title: "Subscribed Successfully",
+      description: "Thank you for joining our newsletter!",
+    });
+    setEmail("");
+  };
+
   return (
     <footer className="bg-secondary text-white py-16 md:py-20">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* Brand & Nonprofit Status */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
@@ -58,6 +76,33 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Newsletter Section */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-serif font-bold">Stay Updated</h3>
+            <p className="text-sm text-white/70 leading-relaxed">
+              Subscribe to our newsletter for the latest news and impact stories.
+            </p>
+            <form onSubmit={handleSubscribe} className="space-y-3">
+              <div className="relative">
+                <Input 
+                  type="email" 
+                  placeholder="Enter your email" 
+                  className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-11 pr-12 rounded-xl focus-visible:ring-primary"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <Button 
+                  type="submit" 
+                  size="icon" 
+                  className="absolute right-1 top-1 h-9 w-9 rounded-lg"
+                >
+                  <Send className="h-4 w-4" />
+                </Button>
+              </div>
+            </form>
           </div>
 
           {/* Contact Section */}

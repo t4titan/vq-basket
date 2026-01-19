@@ -1,46 +1,48 @@
 import { motion } from "framer-motion";
-import { SEO } from "@/components/seo/SEO";
+import { SEO } from "../components/seo/SEO";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Button } from "../components/ui/button";
+import { Linkedin, Twitter } from "lucide-react";
 
 const teamMembers = [
   {
-    name: "Victoria O. Ibrahim",
+    name: "Deborah ",
     role: "Founder / President",
-    image: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609590-scaled.jpg",
+    image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80",
     bio: "Passionate about girl-child empowerment and using sports as a tool for social change.",
   },
+  
   {
-    name: "Coach Ibrahim",
-    role: "Head Coach",
-    image: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609554-2-1536x1025.jpg",
+    name: "AKINDELE PETER",
+    role: "DIRECTOR AND HEAD COACH",
+    image: "https://vqbasketballfoundation.org/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2025-01-16-at-8.06.04-AM-1-scaled-r03lx1s4gcqgwn9w4crb71luo7pkxicaem6oo2ddkw.jpeg",
     bio: "Expert in grassroots basketball development with over 15 years of coaching experience.",
   },
   {
-    name: "Sarah Johnson",
-    role: "Program Director",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80",
-    bio: "Leading our empowerment initiatives and community outreach programs across Nigeria.",
+    name: "YETUNDE ONAOLAPO VESSEL.",
+    role: "ACADEMY ADMIN",
+    image: "https://vqbasketballfoundation.org/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2025-01-16-at-4.44.27-PM-e1749804471416-r78o1u2gceb2ns2q78zvxlx8xhr0hmxeg0c23tcglc.jpeg",
+    bio: "Managing our network of dedicated volunteers and grassroots coordinators.",
   },
   {
-    name: "David Adeleke",
-    role: "Operations Manager",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80",
-    bio: "Ensuring smooth logistical execution of all VQBF tournaments and training clinics.",
+    name: "MUSTAPHA SALIU ABIODUN",
+    role: "Coach",
+    image: "https://vqbasketballfoundation.org/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2025-01-16-at-8.06.04-AM-2-scaled-r03lw7padnlal4hkzzr8z973nvtu370vmhb5b7lz40.jpeg",
+    bio: "Providing assistant to the head caoch in training and team organisation.",
   },
   {
-    name: "Faith Okon",
-    role: "Media / Communications",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80",
+    name: "HAKEEM TAIWO",
+    role: "Coach",
+    image: "https://vqbasketballfoundation.org/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2025-01-16-at-8.06.04-AM-scaled-r03lxr5rkvp7m49105q8kd7apm8hpc51i3ssmjbqww.jpeg",
+    bio: "Ensuring smooth execution of all VQBF tournaments and training clinics.",
+  },
+  {
+    name: "Olamide Johnson Moyegun",
+    role: "CREATIVE DIRECTOR | CINEMATOGRAPHER",
+    image: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-30-at-06.09.38_3cd2e82e.jpg",
     bio: "Telling the VQBF story and managing our digital presence and community engagement.",
   },
-  {
-    name: "Blessing Emmanuel",
-    role: "Volunteer Coordinator",
-    image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80",
-    bio: "Managing our network of dedicated volunteers and grassroots coordinators.",
-  }
+  
 ];
 
 export default function MeetTheTeam() {
