@@ -1,0 +1,134 @@
+redesign and Build a modern, engaging, and responsive 3ON3 Tournament Event Page for Victoria’s Queens Basketball Foundation (VQBF).
+
+🎯 Page Goal
+
+The purpose of this page is to showcase the VQBF 3ON3 Basketball Tournament as a high-impact competitive event that:
+
+Develops basketball skills
+
+Builds confidence and competitive spirit among young girls
+
+Encourages teamwork, discipline, and leadership
+
+Creates exposure and growth opportunities at the grassroots level
+
+The page should communicate why the tournament matters, not just that it exists.
+
+🧱 Page Structure
+1. Hero Section
+
+Headline: VQBF 3ON3 Basketball Tournament
+
+Subheadline:
+Building confidence, competition, and character—one game at a time.
+
+Full-width action image of girls competing in a 3ON3 game
+
+Event-style visual energy (dynamic imagery, bold typography)
+
+Primary CTA Button: Get Involved / Support the Tournament
+
+2. About the 3ON3 Tournament
+
+Section title: “About the 3ON3 Tournament”
+
+Content should explain:
+
+The 3ON3 format as a fast-paced, skill-driven version of basketball
+
+Why it is ideal for youth development and grassroots competitions
+
+How the tournament creates equal opportunity for participation and growth
+
+Tone: energetic, empowering, and purpose-driven.
+
+3. Why the 3ON3 Tournament Matters
+
+Section title: “Why This Tournament Matters”
+Use bullet points or icon cards to highlight:
+
+Competitive Development
+Helps girls sharpen decision-making, speed, and game intelligence.
+
+Confidence & Leadership
+Smaller teams mean every player is involved, seen, and heard.
+
+Teamwork & Discipline
+Players learn communication, accountability, and respect.
+
+Grassroots Exposure
+Provides a platform for girls from underserved communities to compete and be recognized.
+
+4. Impact on Young Girls
+
+Section title: “Shaping the Competitive Spirit”
+
+Explain how the tournament:
+
+Encourages healthy competition
+
+Builds resilience and sportsmanship
+
+Inspires girls to pursue basketball seriously or confidently apply lessons beyond sports
+
+Optional:
+
+Short testimonial-style quotes (placeholders allowed)
+
+Highlight age groups or school levels involved (if applicable)
+
+5. Tournament in Action
+
+Image gallery or slider showcasing:
+
+Game moments
+
+Team celebrations
+
+Coaching and sideline engagement
+
+Caption examples:
+
+Girls competing with confidence and determination
+
+Teamwork and sportsmanship in action
+
+6. Community & Development Focus
+
+Section title: “More Than a Tournament”
+Explain that the 3ON3 event:
+
+Strengthens community engagement
+
+Promotes positive youth development
+
+Supports VQBF’s wider mission of empowerment through sports and education
+
+7. Call-to-Action Section
+
+Visually distinct CTA section.
+
+Headline: Support the Next Generation of Champions
+
+Supporting text:
+Your support helps us organize more tournaments, reach more communities, and empower more girls through competitive sports.
+
+CTA Buttons:
+
+Support the Tournament
+
+Partner With Us
+
+Volunteer or Sponsor
+
+🎨 Design & UX Requirements
+
+Mobile-first, fully responsive
+
+Event-style energy with bold visuals
+
+Clear typography hierarchy
+
+Action photography and dynamic layouts
+
+Subtle animations for section transitions
