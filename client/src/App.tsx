@@ -23,25 +23,75 @@ import Empowerment from "@/pages/Empowerment";
 import Ambassadors from "@/pages/Ambassadors";
 import Gallery from "@/pages/Gallery";
 
+import { SEO } from "@/components/seo/SEO";
+
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/impact" component={Impact} />
-      <Route path="/team" component={MeetTheTeam} />
-      <Route path="/ambassadors" component={Ambassadors} />
-      <Route path="/gallery" component={Gallery} />
-      <Route path="/programs" component={Programs} />
-      <Route path="/nigeria" component={WhatWeDoNigeria} />
-      <Route path="/empowerment" component={Empowerment} />
-      <Route path="/history" component={WhatWeHaveDone} />
-      <Route path="/shoe-drive" component={ShoeDrive} />
-      <Route path="/3on3" component={Tournament3ON3} />
-      <Route path="/blog" component={() => <div className="pt-24 text-center"><h1>Blog Coming Soon</h1></div>} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/donate" component={Donate} />
-      <Route component={NotFound} />
+      <Route path="/">
+        <SEO title="Home" />
+        <Home />
+      </Route>
+      <Route path="/about">
+        <SEO title="About Us" />
+        <About />
+      </Route>
+      <Route path="/impact">
+        <SEO title="Our Impact" />
+        <Impact />
+      </Route>
+      <Route path="/team">
+        <SEO title="Meet the Team" />
+        <MeetTheTeam />
+      </Route>
+      <Route path="/ambassadors">
+        <SEO title="Brand Ambassadors" />
+        <Ambassadors />
+      </Route>
+      <Route path="/gallery">
+        <SEO title="Gallery" />
+        <Gallery />
+      </Route>
+      <Route path="/programs">
+        <SEO title="Our Programs" />
+        <Programs />
+      </Route>
+      <Route path="/nigeria">
+        <SEO title="What We Do - Nigeria" />
+        <WhatWeDoNigeria />
+      </Route>
+      <Route path="/empowerment">
+        <SEO title="Empowerment" />
+        <Empowerment />
+      </Route>
+      <Route path="/history">
+        <SEO title="What We Have Done" />
+        <WhatWeHaveDone />
+      </Route>
+      <Route path="/shoe-drive">
+        <SEO title="Shoe Drive" />
+        <ShoeDrive />
+      </Route>
+      <Route path="/3on3">
+        <SEO title="3ON3 Tournament" />
+        <Tournament3ON3 />
+      </Route>
+      <Route path="/blog">
+        <SEO title="Blogs and News" />
+        <div className="pt-24 text-center"><h1>Blog Coming Soon</h1></div>
+      </Route>
+      <Route path="/contact">
+        <SEO title="Contact Us" />
+        <Contact />
+      </Route>
+      <Route path="/donate">
+        <SEO title="Donate" />
+        <Donate />
+      </Route>
+      <Route>
+        <SEO title="404 Not Found" />
+        <NotFound />
+      </Route>
     </Switch>
   );
 }
