@@ -1,6 +1,6 @@
 import { Link } from "wouter";
-import { Facebook, Instagram, Mail, Phone } from "lucide-react";
-import { SiX as XIcon } from "react-icons/si";
+import { Facebook, Instagram, Mail, Phone, Youtube } from "lucide-react";
+import { SiX as XIcon, SiTiktok as TiktokIcon } from "react-icons/si";
 
 export function Footer() {
   return (
@@ -21,15 +21,21 @@ export function Footer() {
             <p className="text-white/80 leading-relaxed text-lg italic font-serif">
               "Empowering young women through basketball, education, and community service."
             </p>
-            <div className="flex gap-4 pt-2">
-              <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-primary hover:text-white transition-all duration-300 border border-white/10">
+            <div className="flex flex-wrap gap-4 pt-2">
+              <a href="https://web.facebook.com/people/Victorias-Queens-Basketball-Foundation/61565570947352/#" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-primary hover:text-white transition-all duration-300 border border-white/10">
                 <Facebook className="w-5 h-5" />
               </a>
               <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-primary hover:text-white transition-all duration-300 border border-white/10">
                 <XIcon className="w-5 h-5" />
               </a>
-              <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-primary hover:text-white transition-all duration-300 border border-white/10">
+              <a href="https://www.instagram.com/vqbasketballfoundation" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-primary hover:text-white transition-all duration-300 border border-white/10">
                 <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://www.tiktok.com/@vqbasketballfoundation" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-primary hover:text-white transition-all duration-300 border border-white/10">
+                <TiktokIcon className="w-5 h-5" />
+              </a>
+              <a href="https://www.youtube.com/@vqbasketballfoundation" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-primary hover:text-white transition-all duration-300 border border-white/10">
+                <Youtube className="w-5 h-5" />
               </a>
             </div>
           </div>
