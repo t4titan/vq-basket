@@ -11,21 +11,21 @@ import {
   FormLabel, 
   FormMessage,
   FormDescription
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+} from "../components/ui/form";
+import { Input } from "../components/ui/input";
+import { Button } from "../components/ui/button";
+import { Textarea } from "../components/ui/textarea";
 import { 
   Select, 
   SelectContent, 
   SelectItem, 
   SelectTrigger, 
   SelectValue 
-} from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Card, CardContent } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
-import { SEO } from "@/components/seo/SEO";
+} from "../components/ui/select";
+import { Checkbox } from "../components/ui/checkbox";
+import { Card, CardContent } from "../components/ui/card";
+import { useToast } from "../hooks/use-toast";
+import { SEO } from "../components/seo/SEO";
 import { CheckCircle2, Star, Trophy, Users, Heart } from "lucide-react";
 
 const registerSchema = z.object({
@@ -126,7 +126,7 @@ export default function Register() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-serif font-bold mb-6"
+            className="text-5xl text-white md:text-7xl font-serif font-bold mb-6"
           >
             Girls <span className="text-primary">Registration</span>
           </motion.h1>
@@ -291,7 +291,7 @@ export default function Register() {
                                 <SelectValue placeholder="Select a program" />
                               </SelectTrigger>
                             </FormControl>
-                            <SelectContent>
+                            <SelectContent className="bg-white">
                               <SelectItem value="training">Basketball Training</SelectItem>
                               <SelectItem value="tournament">3ON3 Tournament</SelectItem>
                               <SelectItem value="clinics">Basketball Clinics</SelectItem>
