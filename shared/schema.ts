@@ -3,9 +3,6 @@ import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 import { relations } from "drizzle-orm";
 
-// Export auth models first
-export * from "./models/auth.js";
-
 // Content Tables
 
 export const galleryItems = pgTable("gallery_items", {
