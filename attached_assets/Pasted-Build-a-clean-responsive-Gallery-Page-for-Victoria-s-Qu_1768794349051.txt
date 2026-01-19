@@ -1,0 +1,111 @@
+Build a clean, responsive Gallery Page for Victoria’s Queens Basketball Foundation (VQBF) that showcases photos and videos from the foundation’s activities and events.
+
+🎯 Page Goal
+
+The page should visually document VQBF’s work and impact by displaying images and YouTube videos, clearly categorized by events and programs, so visitors can easily explore activities across different initiatives.
+
+🧱 Page Structure
+1. Hero Section
+
+Headline: VQBF Gallery
+
+Subheadline:
+Moments, memories, and milestones from our journey of empowering young girls.
+
+Background image or simple banner
+
+2. Gallery Category Filters
+
+Create filter tabs or buttons to organize content:
+
+All
+
+3ON3 Tournament
+
+Basketball Clinics
+
+Training Sessions
+
+Outreach Programs
+
+Empowerment Programs
+
+Competitions
+
+Clicking a category should filter images and videos related to that event.
+
+3. Image Gallery Section
+
+Grid-style photo layout
+
+Images should:
+
+Open in a lightbox/modal on click
+
+Include short captions (optional), e.g. 3ON3 Tournament – Lagos
+
+Images sourced from VQBF event photos
+
+4. Video Gallery Section
+
+Embed YouTube videos only
+
+Videos should:
+
+Be displayed as responsive cards or grid items
+
+Include titles or short descriptions
+
+Videos should also respect the same category filters (e.g. 3ON3, Clinics, Outreach)
+
+5. Combined Media Experience
+
+Images and videos should:
+
+Appear together when a category is selected
+
+Be clearly marked (play icon for videos)
+
+6. Call to Action (Optional)
+
+Simple CTA at the bottom:
+
+Headline: Be Part of the Story
+
+Buttons:
+
+Support Our Programs
+
+Partner With Us
+
+🎨 Design Requirements
+
+Mobile-first and fully responsive
+
+Clean, modern nonprofit aesthetic
+
+Balanced spacing and consistent thumbnails
+
+Hover effects on images and video cards
+
+Smooth filtering animation (optional)
+
+🛠 Technical Requirements
+
+React with Next.js
+
+TypeScript
+
+Tailwind CSS
+
+Use reusable components:
+
+GalleryFilter
+
+ImageCard
+
+VideoCard
+
+Use YouTube embeds for videos
+
+Optimize images for fast loading

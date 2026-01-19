@@ -143,7 +143,7 @@ export default function Tournament3ON3() {
             </div>
           </motion.div>
           <div className="grid grid-cols-2 gap-4">
-            <img src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/3on3-1.jpg" className="rounded-2xl shadow-lg aspect-square object-cover" alt="Tournament Action 1" />
+            <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/04/DSC_1115-scaled.jpg" className="rounded-2xl shadow-lg aspect-square object-cover" alt="Tournament Action 1" />
             <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/04/DSC_1215-scaled.jpg" className="rounded-2xl shadow-lg aspect-[3/4] object-cover mt-8" alt="Tournament Action 2" />
           </div>
         </div>

@@ -21,6 +21,7 @@ import ShoeDrive from "@/pages/ShoeDrive";
 import Tournament3ON3 from "@/pages/Tournament3ON3";
 import Empowerment from "@/pages/Empowerment";
 import Ambassadors from "@/pages/Ambassadors";
+import Gallery from "@/pages/Gallery";
 
 function Router() {
   return (
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/impact" component={Impact} />
       <Route path="/team" component={MeetTheTeam} />
       <Route path="/ambassadors" component={Ambassadors} />
+      <Route path="/gallery" component={Gallery} />
       <Route path="/programs" component={Programs} />
       <Route path="/nigeria" component={WhatWeDoNigeria} />
       <Route path="/empowerment" component={Empowerment} />

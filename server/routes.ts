@@ -73,17 +73,6 @@ export async function registerRoutes(
 }
 
 async function seedDatabase() {
-  const posts = await storage.getPosts();
-  if (posts.length === 0) {
-    await storage.createPost({
-      title: "Welcome to our new website",
-      slug: "welcome-new-website",
-      content: "We are excited to launch our new platform to connect with our community and supporters.",
-      summary: "Launching the Victoria’s Queens Basketball Foundation digital presence.",
-      authorId: "admin",
-      published: true,
-    });
-  }
 
   const events = await storage.getEvents();
   if (events.length === 0) {

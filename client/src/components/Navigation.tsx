@@ -49,6 +49,7 @@ export function Navigation() {
         { href: "/history", label: "What We Have Done" },
         { href: "/shoe-drive", label: "Shoe Drive" },
         { href: "/3on3", label: "3ON3 Tournament" },
+        { href: "/gallery", label: "Gallery" },
       ]
     },
   ];
