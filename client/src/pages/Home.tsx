@@ -108,9 +108,9 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Link href="/programs">
+              <Link href="/register">
                 <Button className="btn-primary text-lg px-8 py-3 rounded-full w-full sm:w-auto">
-                  Our Programs
+                  Register to Join
                 </Button>
               </Link>
               <Link href="/about">

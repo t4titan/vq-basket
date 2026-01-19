@@ -23,6 +23,7 @@ import Empowerment from "@/pages/Empowerment";
 import Ambassadors from "@/pages/Ambassadors";
 import Gallery from "@/pages/Gallery";
 import AdminLogin from "@/pages/AdminLogin";
+import Register from "@/pages/Register";
 
 import { SEO } from "@/components/seo/SEO";
 
@@ -31,6 +32,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/admin" component={AdminLogin} />
+      <Route path="/register" component={Register} />
       <Route path="/about">
         <SEO title="About Us" />
         <About />
