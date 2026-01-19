@@ -13,7 +13,6 @@ import Programs from "@/pages/Programs";
 import Impact from "@/pages/Impact";
 import Contact from "@/pages/Contact";
 import Donate from "@/pages/Donate";
-import Admin from "@/pages/Admin";
 import NotFound from "@/pages/not-found";
 import MeetTheTeam from "@/pages/MeetTheTeam";
 import WhatWeDoNigeria from "@/pages/WhatWeDoNigeria";
@@ -40,7 +39,6 @@ function Router() {
       <Route path="/blog" component={() => <div className="pt-24 text-center"><h1>Blog Coming Soon</h1></div>} />
       <Route path="/contact" component={Contact} />
       <Route path="/donate" component={Donate} />
-      <Route path="/admin" component={Admin} />
       <Route component={NotFound} />
     </Switch>
   );

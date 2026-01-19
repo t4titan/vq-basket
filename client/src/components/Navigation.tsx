@@ -1,5 +1,4 @@
 import { Link, useLocation } from "wouter";
-import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Heart, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -19,7 +18,6 @@ import {
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
-  const { user } = useAuth();
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
   const toggleAccordion = (label: string) => {
@@ -125,12 +123,6 @@ export function Navigation() {
               </Link>
             ))}
 
-            {user && (
-              <Link href="/admin">
-                 <Button variant="ghost" size="sm" className="font-medium">Admin</Button>
-              </Link>
-            )}
-
             <Link href="/donate">
               <Button className="btn-primary gap-2 rounded-full px-6">
                 <Heart className="w-4 h-4 fill-current" />
@@ -224,11 +216,6 @@ export function Navigation() {
 
               <div className="h-px bg-border my-2" />
               
-              {user && (
-                <Link href="/admin" onClick={() => setIsOpen(false)} className="text-lg font-medium text-secondary">
-                  Admin Dashboard
-                </Link>
-              )}
               <Link href="/donate" onClick={() => setIsOpen(false)}>
                 <Button className="w-full btn-primary text-[12px] py-2 mt-4">
                   Donate Now

@@ -9,7 +9,7 @@ import {
   Heart,
   Briefcase
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import { Link } from "wouter";
 
 const metrics = [
@@ -179,7 +179,7 @@ export default function Impact() {
         <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
         <div className="container-custom relative z-10">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold">Voice of the <span className="text-primary">Community</span></h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white">Voice of the <span className="text-primary">Community</span></h2>
             <p className="text-white/60">Real stories from the girls and mentors we support.</p>
           </div>
 
@@ -246,7 +246,7 @@ export default function Impact() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="bg-secondary rounded-[4rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-3xl"
+          className="bg-secondary rounded-[4rem] p-12 md:p-12 text-center text-white relative overflow-hidden shadow-3xl"
         >
           {/* Background Wash */}
           <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
@@ -255,7 +255,7 @@ export default function Impact() {
           
           <div className="relative z-10 max-w-4xl mx-auto space-y-10">
             <div className="space-y-4">
-              <h2 className="text-5xl md:text-7xl font-serif font-bold">Partner With Us to <span className="text-primary">Multiply Impact</span></h2>
+              <h2 className="text-5xl md:text-7xl font-serif font-bold text-white">Partner With Us to <span className="text-primary">Multiply Impact</span></h2>
               <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
                 Your sponsorship helps us scale our programs, provide more scholarships, and build a brighter future for young athletes across Africa.
               </p>
@@ -273,13 +273,6 @@ export default function Impact() {
                 </Button>
               </Link>
             </div>
-            
-            <Link href="/donate">
-              <Button variant="link" className="text-white/60 hover:text-white text-lg font-medium p-0 h-auto">
-                Or simply support our mission with a donation
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
           </div>
         </motion.div>
       </section>

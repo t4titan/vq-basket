@@ -10,7 +10,7 @@ import {
   CheckCircle2,
   ArrowRight
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import { Link } from "wouter";
 
 const empowermentPrograms = [
@@ -19,28 +19,28 @@ const empowermentPrograms = [
     description: "Hands-on training in hair styling, braiding, beauty techniques, and creative arts. We focus on income-generating skills that help girls earn and support themselves and their families.",
     icon: Scissors,
     color: "bg-primary",
-    image: "https://vqbasketballfoundation.org/wp-content/uploads/2024/05/hair-braiding.jpg"
+    image: "https://vqbasketballfoundation.org/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-05-at-21.31.12-768x1024.jpeg"
   },
   {
     title: "Vocational Training & Career Readiness",
     description: "Tailoring and practical skills training to prepare girls for careers or small business ventures. Highlight confidence-building, hands-on mentorship, and real-world workforce preparation.",
     icon: Briefcase,
     color: "bg-secondary",
-    image: "https://vqbasketballfoundation.org/wp-content/uploads/2024/05/tailoring.jpg"
+    image: "https://vqbasketballfoundation.org/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-05-at-21.31.12-1-768x1024.jpeg"
   },
   {
     title: "Scholarship & Educational Support",
     description: "Financial support for academic costs — including fees, exam preparation, and access to educational resources. Educational support opens doors to further learning and career opportunities.",
     icon: GraduationCap,
     color: "bg-accent",
-    image: "https://vqbasketballfoundation.org/wp-content/uploads/2024/05/education.jpg"
+    image: "https://chatgpt.com/s/m_696d466657e08191b08ea8bbace0c67a"
   },
   {
     title: "Entrepreneurial Skills & Career Pathways",
     description: "Workshops and mentorship on business basics, financial literacy, leadership, and career planning. These skills help girls start small businesses or succeed in various professions.",
     icon: Lightbulb,
     color: "bg-blue-500",
-    image: "https://vqbasketballfoundation.org/wp-content/uploads/2024/05/entrepreneur.jpg"
+    image: "https://chatgpt.com/s/m_696d46949dd08191b3099b9a62fb86d7"
   }
 ];
 
@@ -71,7 +71,7 @@ export default function Empowerment() {
       <section className="relative h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/empowerment-hero.jpg" 
+            src="https://vqbasketballfoundation.org/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-05-at-21.37.46-1024x768.jpeg" 
             alt="Empowerment Hero" 
             className="w-full h-full object-cover brightness-[0.4]"
           />

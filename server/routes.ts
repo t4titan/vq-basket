@@ -1,8 +1,6 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage.js";
-import { registerAuthRoutes } from "./replit_integrations/auth/routes.js";
-import { setupAuth } from "./replit_integrations/auth/replitAuth.js"
 import { api } from "../shared/routes.js";
 import { z } from "zod";
 import { insertPostSchema, insertEventSchema, insertTeamMemberSchema } from "../shared/schema.js";
@@ -11,10 +9,6 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  // Setup Auth
-  await setupAuth(app);
-  registerAuthRoutes(app);
-
   // === Posts ===
   app.get(api.posts.list.path, async (req, res) => {
     const published = req.query.published === 'true';
@@ -31,7 +25,6 @@ export async function registerRoutes(
   });
 
   app.post(api.posts.create.path, async (req, res) => {
-    if (!req.isAuthenticated()) return res.sendStatus(401);
     try {
       const input = insertPostSchema.parse(req.body);
       const post = await storage.createPost(input);
@@ -45,7 +38,6 @@ export async function registerRoutes(
   });
 
   app.put(api.posts.update.path, async (req, res) => {
-    if (!req.isAuthenticated()) return res.sendStatus(401);
     try {
       const input = insertPostSchema.partial().parse(req.body);
       const post = await storage.updatePost(Number(req.params.id), input);
@@ -59,7 +51,6 @@ export async function registerRoutes(
   });
 
   app.delete(api.posts.delete.path, async (req, res) => {
-    if (!req.isAuthenticated()) return res.sendStatus(401);
     await storage.deletePost(Number(req.params.id));
     res.sendStatus(204);
   });
@@ -71,7 +62,6 @@ export async function registerRoutes(
   });
 
   app.post(api.events.create.path, async (req, res) => {
-    if (!req.isAuthenticated()) return res.sendStatus(401);
     try {
       const input = insertEventSchema.parse({
         ...req.body,
@@ -88,7 +78,6 @@ export async function registerRoutes(
   });
 
   app.delete(api.events.delete.path, async (req, res) => {
-    if (!req.isAuthenticated()) return res.sendStatus(401);
     await storage.deleteEvent(Number(req.params.id));
     res.sendStatus(204);
   });
@@ -113,7 +102,6 @@ export async function registerRoutes(
 
   // === Donations ===
   app.get(api.donations.list.path, async (req, res) => {
-    if (!req.isAuthenticated()) return res.sendStatus(401);
     const donations = await storage.getDonations();
     res.json(donations);
   });
