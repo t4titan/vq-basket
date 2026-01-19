@@ -1,6 +1,5 @@
 import { 
-  posts, events, galleryItems, teamMembers, messages, donations,
-  type Post, type InsertPost,
+  events, galleryItems, teamMembers, messages, donations,
   type Event, type InsertEvent,
   type GalleryItem, type InsertGalleryItem,
   type TeamMember, type InsertTeamMember,
@@ -11,13 +10,6 @@ import { db } from "./db.js";
 import { eq, desc } from "drizzle-orm";
 
 export interface IStorage {
-  // Posts
-  getPosts(publishedOnly?: boolean): Promise<Post[]>;
-  getPost(id: number): Promise<Post | undefined>;
-  getPostBySlug(slug: string): Promise<Post | undefined>;
-  createPost(post: InsertPost): Promise<Post>;
-  updatePost(id: number, post: Partial<InsertPost>): Promise<Post>;
-  deletePost(id: number): Promise<void>;
 
   // Events
   getEvents(): Promise<Event[]>;
@@ -45,42 +37,6 @@ export interface IStorage {
 }
 
 export class DatabaseStorage implements IStorage {
-  // Posts
-  async getPosts(publishedOnly?: boolean): Promise<Post[]> {
-    let query = db.select().from(posts).orderBy(desc(posts.createdAt));
-    if (publishedOnly) {
-      query.where(eq(posts.published, true));
-    }
-    return await query;
-  }
-
-  async getPost(id: number): Promise<Post | undefined> {
-    const [post] = await db.select().from(posts).where(eq(posts.id, id));
-    return post;
-  }
-
-  async getPostBySlug(slug: string): Promise<Post | undefined> {
-    const [post] = await db.select().from(posts).where(eq(posts.slug, slug));
-    return post;
-  }
-
-  async createPost(insertPost: InsertPost): Promise<Post> {
-    const [post] = await db.insert(posts).values(insertPost).returning();
-    return post;
-  }
-
-  async updatePost(id: number, updates: Partial<InsertPost>): Promise<Post> {
-    const [post] = await db
-      .update(posts)
-      .set(updates)
-      .where(eq(posts.id, id))
-      .returning();
-    return post;
-  }
-
-  async deletePost(id: number): Promise<void> {
-    await db.delete(posts).where(eq(posts.id, id));
-  }
 
   // Events
   async getEvents(): Promise<Event[]> {

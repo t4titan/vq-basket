@@ -7,7 +7,7 @@ import {
   ArrowRight,
   Heart
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import { Link } from "wouter";
 
 const tournamentBenefits = [
@@ -44,9 +44,9 @@ export default function Tournament3ON3() {
       <section className="relative h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/3on3-hero.jpg" 
+            src="https://vqbasketballfoundation.org/wp-content/uploads/2025/04/DSC_1076-scaled.jpg" 
             alt="3ON3 Tournament" 
-            className="w-full h-full object-cover brightness-[0.4]"
+            className="w-full h-full object-cover object-top brightness-[0.4]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </div>
@@ -144,7 +144,7 @@ export default function Tournament3ON3() {
           </motion.div>
           <div className="grid grid-cols-2 gap-4">
             <img src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/3on3-1.jpg" className="rounded-2xl shadow-lg aspect-square object-cover" alt="Tournament Action 1" />
-            <img src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/3on3-2.jpg" className="rounded-2xl shadow-lg aspect-[3/4] object-cover mt-8" alt="Tournament Action 2" />
+            <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/04/DSC_1215-scaled.jpg" className="rounded-2xl shadow-lg aspect-[3/4] object-cover mt-8" alt="Tournament Action 2" />
           </div>
         </div>
       </section>

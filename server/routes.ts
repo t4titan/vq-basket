@@ -3,57 +3,12 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage.js";
 import { api } from "../shared/routes.js";
 import { z } from "zod";
-import { insertPostSchema, insertEventSchema, insertTeamMemberSchema } from "../shared/schema.js";
+import { insertEventSchema, insertTeamMemberSchema } from "../shared/schema.js";
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  // === Posts ===
-  app.get(api.posts.list.path, async (req, res) => {
-    const published = req.query.published === 'true';
-    const posts = await storage.getPosts(published);
-    res.json(posts);
-  });
-
-  app.get(api.posts.get.path, async (req, res) => {
-    const post = await storage.getPostBySlug(req.params.slug);
-    if (!post) {
-      return res.status(404).json({ message: "Post not found" });
-    }
-    res.json(post);
-  });
-
-  app.post(api.posts.create.path, async (req, res) => {
-    try {
-      const input = insertPostSchema.parse(req.body);
-      const post = await storage.createPost(input);
-      res.status(201).json(post);
-    } catch (e) {
-      if (e instanceof z.ZodError) {
-        return res.status(400).json(e.errors);
-      }
-      throw e;
-    }
-  });
-
-  app.put(api.posts.update.path, async (req, res) => {
-    try {
-      const input = insertPostSchema.partial().parse(req.body);
-      const post = await storage.updatePost(Number(req.params.id), input);
-      res.json(post);
-    } catch (e) {
-      if (e instanceof z.ZodError) {
-        return res.status(400).json(e.errors);
-      }
-      throw e;
-    }
-  });
-
-  app.delete(api.posts.delete.path, async (req, res) => {
-    await storage.deletePost(Number(req.params.id));
-    res.sendStatus(204);
-  });
 
   // === Events ===
   app.get(api.events.list.path, async (req, res) => {

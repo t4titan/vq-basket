@@ -7,18 +7,6 @@ import { relations } from "drizzle-orm";
 export * from "./models/auth.js";
 
 // Content Tables
-export const posts = pgTable("posts", {
-  id: serial("id").primaryKey(),
-  title: text("title").notNull(),
-  slug: text("slug").notNull().unique(),
-  content: text("content").notNull(),
-  summary: text("summary"),
-  coverImage: text("cover_image"),
-  authorId: text("author_id").notNull(),
-  published: boolean("published").default(false),
-  publishedAt: timestamp("published_at"),
-  createdAt: timestamp("created_at").defaultNow(),
-});
 
 export const events = pgTable("events", {
   id: serial("id").primaryKey(),
@@ -76,7 +64,6 @@ export const partners = pgTable("partners", {
 });
 
 // Zod Schemas
-export const insertPostSchema = createInsertSchema(posts).omit({ id: true, createdAt: true, publishedAt: true });
 export const insertEventSchema = createInsertSchema(events).omit({ id: true, createdAt: true });
 export const insertGalleryItemSchema = createInsertSchema(galleryItems).omit({ id: true, createdAt: true });
 export const insertTeamMemberSchema = createInsertSchema(teamMembers).omit({ id: true, createdAt: true });
@@ -85,8 +72,6 @@ export const insertDonationSchema = createInsertSchema(donations).omit({ id: tru
 export const insertPartnerSchema = createInsertSchema(partners).omit({ id: true, createdAt: true });
 
 // Types
-export type Post = typeof posts.$inferSelect;
-export type InsertPost = z.infer<typeof insertPostSchema>;
 
 export type Event = typeof events.$inferSelect;
 export type InsertEvent = z.infer<typeof insertEventSchema>;
