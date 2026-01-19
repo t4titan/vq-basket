@@ -8,16 +8,6 @@ export * from "./models/auth.js";
 
 // Content Tables
 
-export const events = pgTable("events", {
-  id: serial("id").primaryKey(),
-  title: text("title").notNull(),
-  description: text("description").notNull(),
-  date: timestamp("date").notNull(),
-  location: text("location").notNull(),
-  imageUrl: text("image_url"),
-  createdAt: timestamp("created_at").defaultNow(),
-});
-
 export const galleryItems = pgTable("gallery_items", {
   id: serial("id").primaryKey(),
   title: text("title"),
@@ -64,7 +54,6 @@ export const partners = pgTable("partners", {
 });
 
 // Zod Schemas
-export const insertEventSchema = createInsertSchema(events).omit({ id: true, createdAt: true });
 export const insertGalleryItemSchema = createInsertSchema(galleryItems).omit({ id: true, createdAt: true });
 export const insertTeamMemberSchema = createInsertSchema(teamMembers).omit({ id: true, createdAt: true });
 export const insertMessageSchema = createInsertSchema(messages).omit({ id: true, createdAt: true });
@@ -72,9 +61,6 @@ export const insertDonationSchema = createInsertSchema(donations).omit({ id: tru
 export const insertPartnerSchema = createInsertSchema(partners).omit({ id: true, createdAt: true });
 
 // Types
-
-export type Event = typeof events.$inferSelect;
-export type InsertEvent = z.infer<typeof insertEventSchema>;
 
 export type GalleryItem = typeof galleryItems.$inferSelect;
 export type InsertGalleryItem = z.infer<typeof insertGalleryItemSchema>;

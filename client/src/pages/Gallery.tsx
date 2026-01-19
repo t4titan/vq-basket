@@ -7,7 +7,7 @@ import {
   Users,
   X
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import { Link } from "wouter";
 
 const categories = [
@@ -104,11 +104,10 @@ export default function Gallery() {
 
       {/* Photo Section with Filters */}
       <section className="py-24 container-custom">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-12">
+        <div className="flex flex-col md:items-center justify-between gap-8 mb-12">
           <h2 className="text-4xl font-serif font-bold">Photo <span className="text-primary">Gallery</span></h2>
           
           <div className="flex items-center gap-4 overflow-x-auto pb-2 no-scrollbar">
-            <Filter className="w-5 h-5 text-muted-foreground shrink-0" />
             <div className="flex gap-2">
               {categories.map((cat) => (
                 <Button

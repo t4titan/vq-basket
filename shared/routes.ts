@@ -1,7 +1,5 @@
 import { z } from 'zod';
 import { 
-  insertEventSchema, 
-  events, 
   insertGalleryItemSchema, 
   galleryItems, 
   insertTeamMemberSchema, 
@@ -26,42 +24,6 @@ export const errorSchemas = {
 };
 
 export const api = {
-  events: {
-    list: {
-      method: 'GET' as const,
-      path: '/api/events',
-      responses: {
-        200: z.array(z.custom<typeof events.$inferSelect>()),
-      },
-    },
-    create: {
-      method: 'POST' as const,
-      path: '/api/events',
-      input: insertEventSchema,
-      responses: {
-        201: z.custom<typeof events.$inferSelect>(),
-        400: errorSchemas.validation,
-      },
-    },
-    update: {
-      method: 'PUT' as const,
-      path: '/api/events/:id',
-      input: insertEventSchema.partial(),
-      responses: {
-        200: z.custom<typeof events.$inferSelect>(),
-        400: errorSchemas.validation,
-        404: errorSchemas.notFound,
-      },
-    },
-    delete: {
-      method: 'DELETE' as const,
-      path: '/api/events/:id',
-      responses: {
-        204: z.void(),
-        404: errorSchemas.notFound,
-      },
-    },
-  },
   gallery: {
     list: {
       method: 'GET' as const,

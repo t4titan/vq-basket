@@ -3,39 +3,11 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage.js";
 import { api } from "../shared/routes.js";
 import { z } from "zod";
-import { insertEventSchema, insertTeamMemberSchema } from "../shared/schema.js";
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-
-  // === Events ===
-  app.get(api.events.list.path, async (req, res) => {
-    const events = await storage.getEvents();
-    res.json(events);
-  });
-
-  app.post(api.events.create.path, async (req, res) => {
-    try {
-      const input = insertEventSchema.parse({
-        ...req.body,
-        date: new Date(req.body.date)
-      });
-      const event = await storage.createEvent(input);
-      res.status(201).json(event);
-    } catch (e) {
-      if (e instanceof z.ZodError) {
-        return res.status(400).json(e.errors);
-      }
-      throw e;
-    }
-  });
-
-  app.delete(api.events.delete.path, async (req, res) => {
-    await storage.deleteEvent(Number(req.params.id));
-    res.sendStatus(204);
-  });
 
   // === Gallery ===
   app.get(api.gallery.list.path, async (req, res) => {
@@ -73,16 +45,6 @@ export async function registerRoutes(
 }
 
 async function seedDatabase() {
-
-  const events = await storage.getEvents();
-  if (events.length === 0) {
-    await storage.createEvent({
-      title: "Annual Charity Basketball Tournament",
-      description: "Join us for a day of fun, competition, and community building.",
-      date: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30), // 30 days from now
-      location: "City Sports Center",
-    });
-  }
 
   const team = await storage.getTeamMembers();
   if (team.length === 0) {

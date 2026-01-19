@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertDonationSchema, type InsertDonation } from "@shared/schema";
-import { useCreateDonation } from "@/hooks/use-donations";
-import { useToast } from "@/hooks/use-toast";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { insertDonationSchema, type InsertDonation } from "../../../shared/schema";
+import { useCreateDonation } from "../hooks/use-donations";
+import { useToast } from "../hooks/use-toast";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
 import { Loader2, Heart, Check } from "lucide-react";
 import {
   Form,
@@ -14,8 +14,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { cn } from "@/lib/utils";
+} from "../components/ui/form";
+import { cn } from "../lib/utils";
 
 export default function Donate() {
   const { toast } = useToast();

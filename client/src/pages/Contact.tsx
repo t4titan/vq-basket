@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertMessageSchema, type InsertMessage } from "@shared/schema";
-import { useCreateMessage } from "@/hooks/use-messages";
-import { useToast } from "@/hooks/use-toast";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { insertMessageSchema, type InsertMessage } from "../../../shared/schema";
+import { useCreateMessage } from "../hooks/use-messages";
+import { useToast } from "../hooks/use-toast";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
 import { Loader2, Mail, MapPin, Phone } from "lucide-react";
 import {
   Form,
@@ -14,7 +14,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "../components/ui/form";
 
 export default function Contact() {
   const { toast } = useToast();

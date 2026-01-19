@@ -1,10 +1,8 @@
 import { Link, useLocation } from "wouter";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import { Menu, X, Heart, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-import logoImg from "@assets/vq_1768547763009.png";
 
 import {
   NavigationMenu,
@@ -13,7 +11,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+} from "../components/ui/navigation-menu";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,9 +73,12 @@ export function Navigation() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center space-x-3 z-50">
-            <img src={logoImg} alt="VQ Foundation Logo" className="w-12 h-12 object-contain" />
-            <span className="font-serif font-bold text-xl md:text-2xl text-secondary leading-tight hidden sm:block">
-              Victoria's Queens<br /><span className="text-sm font-sans font-normal text-muted-foreground">Basketball Foundation</span>
+            <img src={"https://vqbasketballfoundation.org/wp-content/uploads/2024/12/cropped-cropped-Victoria_s_2-removebg-preview-e1734333881434.png"} alt="VQ Foundation Logo" className="w-12 h-12 object-contain" />
+            <span className="flex flex-col items-start">
+              <h2 className="font-serif font-bold text-xl md:text-2xl text-secondary leading-tight hidden sm:block">
+                Victoria's Queens
+              </h2>
+              <p className="text-sm font-sans font-normal text-muted-foreground">Basketball Foundation</p>
             </span>
           </Link>
 

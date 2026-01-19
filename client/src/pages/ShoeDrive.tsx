@@ -9,7 +9,7 @@ import {
   Share2,
   PackageCheck
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import { Globe } from "lucide-react";
 import { Link } from "wouter";
 

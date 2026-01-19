@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { SiInstagram, SiTiktok, SiYoutube, SiX, SiFacebook } from "react-icons/si";
-import { AmbassadorRegistrationModal } from "@/components/AmbassadorRegistrationModal";
+import { AmbassadorRegistrationModal } from "../components/AmbassadorRegistrationModal";
 
 export default function Ambassadors() {
   const socialPlatforms = [

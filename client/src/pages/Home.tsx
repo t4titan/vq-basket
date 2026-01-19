@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import { ArrowRight, Trophy, Users, Heart, Calendar, Image as ImageIcon } from "lucide-react";
-import { useEvents } from "@/hooks/use-events";
-import { useGallery } from "@/hooks/use-gallery";
+import { useGallery } from "../hooks/use-gallery";
 import { format } from "date-fns";
-import EmblaCarousel from "@/components/EmCarousel"
+import EmblaCarousel from "../components/EmCarousel"
 
 export default function Home() {
   const [statIndex, setStatIndex] = useState(0);
@@ -48,7 +47,7 @@ export default function Home() {
     },
   ];
 
-  const { data: events } = useEvents();
+  // const { data: events } = useEvents();
   const { data: galleryItemsFromDb } = useGallery();
 
   const galleryItems =

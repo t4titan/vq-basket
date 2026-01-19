@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { useTeamMembers } from "@/hooks/use-team";
-import { Card, CardContent } from "@/components/ui/card";
+import { useTeamMembers } from "../hooks/use-team";
+import { Card, CardContent } from "../components/ui/card";
 
 export default function MeetTheTeam() {
   const { data: team } = useTeamMembers();

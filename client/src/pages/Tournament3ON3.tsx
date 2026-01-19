@@ -150,16 +150,16 @@ export default function Tournament3ON3() {
       </section>
 
       {/* 5. Call to Action */}
-      <section className="py-24 container-custom">
+      <section className="py-12 container-custom">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="bg-secondary rounded-[4rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-3xl"
+          className="bg-secondary rounded-[4rem] p-12 md:p-12 text-center text-white relative overflow-hidden shadow-3xl"
         >
           <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
           <div className="relative z-10 max-w-4xl mx-auto space-y-10">
-            <h2 className="text-5xl md:text-6xl font-serif font-bold">Support Girls Through <span className="text-primary">Competitive Sports</span></h2>
+            <h2 className="text-5xl md:text-6xl font-serif font-bold text-white">Support Girls Through <span className="text-primary">Competitive Sports</span></h2>
             <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto leading-relaxed italic font-serif">
               “Your support helps us organize more tournaments and reach more girls who are ready to rise.”
             </p>
