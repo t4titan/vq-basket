@@ -26,6 +26,8 @@ import { SiX, SiInstagram, SiTiktok, SiFacebook, SiYoutube } from "react-icons/s
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().min(10, "Phone number must be at least 10 characters"),
   bio: z.string().min(10, "Bio must be at least 10 characters"),
   twitter: z.string().optional(),
   instagram: z.string().optional(),
@@ -44,6 +46,8 @@ export function AmbassadorRegistrationModal({ children }: { children: React.Reac
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      email: "",
+      phone: "",
       bio: "",
       twitter: "",
       instagram: "",
@@ -90,6 +94,34 @@ export function AmbassadorRegistrationModal({ children }: { children: React.Reac
                 </FormItem>
               )}
             />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email Address</FormLabel>
+                    <FormControl>
+                      <Input type="email" placeholder="jane@example.com" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Phone Number</FormLabel>
+                    <FormControl>
+                      <Input type="tel" placeholder="+1 (555) 000-0000" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
             <FormField
               control={form.control}
               name="bio"

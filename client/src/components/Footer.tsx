@@ -90,29 +90,32 @@ export function Footer() {
             </ul>
           </div>
 
+          
+
+        {/* Bottom Bar */}
+        <div className="mt-20 pt-10 border-t border-white/10 flex flex-col items-center gap-6">
           {/* Legal/Nonprofit Info */}
-          <div className="space-y-8">
-            <h3 className="text-xl font-serif font-bold border-l-4 border-primary pl-4">Foundation</h3>
-            <div className="space-y-4 p-6 bg-white/5 rounded-2xl border border-white/10">
-              <p className="text-white/80 leading-relaxed text-sm">
-                Victoria's Queens Basketball Foundation is a registered <span className="text-white font-bold underline decoration-primary underline-offset-4">501(c)(3) Nonprofit Organization</span>.
-              </p>
-              <div className="pt-2 border-t border-white/10">
-                <p className="text-xs font-bold text-white/50 uppercase tracking-widest">Tax ID / EIN</p>
-                <p className="text-primary font-mono font-bold">33-3667260</p>
+            <div className="space-y-8">
+              <h3 className="text-xl font-serif font-bold border-l-4 border-primary pl-4">Foundation</h3>
+              <div className="space-y-4 p-6 bg-white/5 rounded-2xl border border-white/10">
+                <p className="text-white/80 leading-relaxed text-sm">
+                  Victoria's Queens Basketball Foundation is a registered <span className="text-white font-bold underline decoration-primary underline-offset-4">501(c)(3) Nonprofit Organization</span>.
+                </p>
+                <div className="pt-2 border-t border-white/10">
+                  <p className="text-xs font-bold text-white/50 uppercase tracking-widest">Tax ID / EIN</p>
+                  <p className="text-primary font-mono font-bold">33-3667260</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-white/50 text-sm font-medium">
-            Copyright © {new Date().getFullYear()}. Victoria's Queens Basketball Foundation
-          </p>
-          <div className="flex gap-8 text-sm font-medium">
-            <Link href="/privacy" className="text-white/40 hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="text-white/40 hover:text-white transition-colors">Terms of Use</Link>
+          <div className="w-full flex flex-col md:flex-row justify-between items-center">
+            <p className="text-white/50 text-sm font-medium">
+              Copyright © {new Date().getFullYear()}. Victoria's Queens Basketball Foundation
+            </p>
+            <div className="flex gap-8 text-sm font-medium">
+              <Link href="/privacy" className="text-white/40 hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="text-white/40 hover:text-white transition-colors">Terms of Use</Link>
+            </div>
           </div>
         </div>
       </div>
