@@ -22,16 +22,15 @@ import Tournament3ON3 from "@/pages/Tournament3ON3";
 import Empowerment from "@/pages/Empowerment";
 import Ambassadors from "@/pages/Ambassadors";
 import Gallery from "@/pages/Gallery";
+import AdminLogin from "@/pages/AdminLogin";
 
 import { SEO } from "@/components/seo/SEO";
 
 function Router() {
   return (
     <Switch>
-      <Route path="/">
-        <SEO title="Home" />
-        <Home />
-      </Route>
+      <Route path="/" component={Home} />
+      <Route path="/admin" component={AdminLogin} />
       <Route path="/about">
         <SEO title="About Us" />
         <About />
