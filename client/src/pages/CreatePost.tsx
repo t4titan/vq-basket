@@ -46,7 +46,7 @@ export default function CreatePost() {
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      <SEO title="Meet the Team" />
+      <SEO title="Create Post" />
 
       <div className="container max-w-4xl mx-auto px-4 py-8">
         <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8 transition-colors">
