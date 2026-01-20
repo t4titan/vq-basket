@@ -27,6 +27,9 @@ import Register from "./pages/Register";
 import CreatePost from "./pages/CreatePost";
 
 import { SEO } from "./components/seo/SEO";
+import Blogs from "./pages/Blogs";
+import PostDetail from "./pages/PostDetail";
+import EditPost from "./pages/EditPost";
 
 function Router() {
   return (
@@ -35,6 +38,8 @@ function Router() {
       <Route path="/admin" component={AdminLogin} />
       <Route path="/register" component={Register} />
       <Route path="/create-post" component={CreatePost} />
+      <Route path="/post/:id" component={PostDetail} />
+      <Route path="/edit/:id" component={EditPost} />
       <Route path="/about">
         <SEO title="About Us" />
         <About />
@@ -81,7 +86,7 @@ function Router() {
       </Route>
       <Route path="/blog">
         <SEO title="Blogs and News" />
-        <div className="pt-24 text-center"><h1>Blog Coming Soon</h1></div>
+        <Blogs />
       </Route>
       <Route path="/contact">
         <SEO title="Contact Us" />

@@ -3,7 +3,7 @@ import { PostCard } from "../components/PostCard";
 import { Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function Home() {
+export default function Blogs() {
   const { data: posts, isLoading, error } = usePosts();
 
   const container = {
@@ -24,7 +24,6 @@ export default function Home() {
   if (error) {
     return (
       <div className="min-h-screen bg-background">
-        <Navbar />
         <div className="container max-w-5xl mx-auto px-4 py-12 flex flex-col items-center justify-center text-center">
           <h2 className="text-2xl font-bold text-destructive mb-2">Something went wrong</h2>
           <p className="text-muted-foreground mb-6">Failed to load posts. Please try again later.</p>
@@ -38,7 +37,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <Navbar />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-32 px-4">
