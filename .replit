@@ -38,5 +38,14 @@ task = "shell.exec"
 args = "npm run dev"
 waitForPort = 5000
 
+[[workflows.workflow]]
+name = "Command"
+mode = "parallel"
+author = 46243197
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx drizzle-kit generate"
+
 [agent]
 integrations = ["javascript_log_in_with_replit:2.0.0"]
