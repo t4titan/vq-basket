@@ -48,7 +48,7 @@ export default function Blogs() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6"
           >
-            Stories worth <span className="text-primary italic">sharing.</span>
+            Stories that <span className="text-primary italic">Inspire.</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ export default function Blogs() {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
           >
-            A curated space for thoughts, ideas, and stories. Discover compelling narratives and share your own perspective with the world.
+            A dedicated space for sharing impactful stories, insights, and experiences from our community. Explore inspiring journeys, meaningful ideas, and voices that celebrate growth, empowerment, and the love of the game.
           </motion.p>
         </div>
       </section>
@@ -76,7 +76,6 @@ export default function Blogs() {
           ) : posts?.length === 0 ? (
             <div className="text-center py-20 bg-card rounded-2xl border border-dashed border-border">
               <h3 className="text-xl font-medium text-foreground mb-2">No posts yet</h3>
-              <p className="text-muted-foreground">Be the first to share your story.</p>
             </div>
           ) : (
             <motion.div 
@@ -94,12 +93,6 @@ export default function Blogs() {
           )}
         </div>
       </main>
-
-      <footer className="border-t border-border py-8 bg-background">
-        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Narrative Blog. Crafted with care.
-        </div>
-      </footer>
     </div>
   );
 }
