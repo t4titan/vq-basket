@@ -4,7 +4,6 @@ import { useCreatePost } from "../hooks/use-posts";
 import { RichTextEditor } from "../components/RichTextEditor";
 import { Loader2, ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
-import { SEO } from "../components/seo/SEO";
 
 export default function CreatePost() {
   const [, setLocation] = useLocation();
@@ -46,7 +45,6 @@ export default function CreatePost() {
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      <SEO title="Create Post" />
 
       <div className="container max-w-4xl mx-auto px-4 py-8">
         <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8 transition-colors">

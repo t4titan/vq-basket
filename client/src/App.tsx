@@ -34,6 +34,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/admin" component={AdminLogin} />
       <Route path="/register" component={Register} />
+      <Route path="/create-post" component={CreatePost} />
       <Route path="/about">
         <SEO title="About Us" />
         <About />
@@ -93,10 +94,6 @@ function Router() {
       <Route>
         <SEO title="404 Not Found" />
         <NotFound />
-      </Route>
-      <Route path={"/create-post"}>
-        <SEO title="Create Post" />
-        <CreatePost />
       </Route>
     </Switch>
   );
