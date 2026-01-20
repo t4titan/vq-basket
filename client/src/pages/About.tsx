@@ -102,7 +102,7 @@ export default function About() {
           </motion.div>
           <div className="relative">
             <img 
-              src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/who-we-are.jpg" 
+              src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609709-scaled.jpg" 
               className="rounded-[3rem] shadow-2xl aspect-square object-cover" 
               alt="Who We Are" 
             />
@@ -177,7 +177,7 @@ export default function About() {
         <div className="absolute inset-0 bg-primary/5 mix-blend-overlay" />
         <div className="container-custom relative z-10">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold">Our Core <span className="text-primary">Values</span></h2>
+            <h2 className="text-4xl text-white md:text-5xl font-serif font-bold">Our Core <span className="text-primary">Values</span></h2>
             <p className="text-white/60">The pillars that guide our every action and decision.</p>
           </div>
           

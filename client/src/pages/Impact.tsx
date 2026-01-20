@@ -229,12 +229,12 @@ export default function Impact() {
           </motion.div>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4 pt-12">
-              <img src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/vision-1.jpg" className="rounded-3xl shadow-xl aspect-[3/4] object-cover" alt="Vision 1" />
-              <img src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/vision-2.jpg" className="rounded-3xl shadow-xl aspect-square object-cover" alt="Vision 2" />
+              <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-16-at-06.32.33.jpeg" className="rounded-3xl shadow-xl aspect-[3/4] object-cover" alt="Vision 1" />
+              <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609719-scaled.jpg" className="rounded-3xl shadow-xl aspect-square object-cover" alt="Vision 2" />
             </div>
             <div className="space-y-4">
-              <img src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/vision-3.jpg" className="rounded-3xl shadow-xl aspect-square object-cover" alt="Vision 3" />
-              <img src="https://vqbasketballfoundation.org/wp-content/uploads/2024/05/vision-4.jpg" className="rounded-3xl shadow-xl aspect-[3/4] object-cover" alt="Vision 4" />
+              <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609675-scaled.jpg" className="rounded-3xl shadow-xl aspect-square object-cover" alt="Vision 3" />
+              <img src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-17-at-10.19.39_9b3f3954.jpg" className="rounded-3xl shadow-xl aspect-[3/4] object-cover" alt="Vision 4" />
             </div>
           </div>
         </div>
