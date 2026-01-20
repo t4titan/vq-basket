@@ -1,8 +1,10 @@
-import {  galleryItems, teamMembers, messages, donations,
+import {  galleryItems, teamMembers, messages, donations, partners, newsletterSubscriptions,
   type GalleryItem, type InsertGalleryItem,
   type TeamMember, type InsertTeamMember,
   type Message, type InsertMessage,
-  type Donation, type InsertDonation
+  type Donation, type InsertDonation,
+  type Partner, type InsertPartner,
+  type NewsletterSubscription, type InsertNewsletterSubscription
 } from "../shared/schema.js";
 import { db } from "./db.js";
 import { eq, desc } from "drizzle-orm";
@@ -25,6 +27,9 @@ export interface IStorage {
   // Donations
   getDonations(): Promise<Donation[]>;
   createDonation(donation: InsertDonation): Promise<Donation>;
+
+  // Newsletter
+  createNewsletterSubscription(sub: InsertNewsletterSubscription): Promise<NewsletterSubscription>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -71,6 +76,12 @@ export class DatabaseStorage implements IStorage {
   async createDonation(insertDonation: InsertDonation): Promise<Donation> {
     const [donation] = await db.insert(donations).values(insertDonation).returning();
     return donation;
+  }
+
+  // Newsletter
+  async createNewsletterSubscription(insertSub: InsertNewsletterSubscription): Promise<NewsletterSubscription> {
+    const [sub] = await db.insert(newsletterSubscriptions).values(insertSub).returning();
+    return sub;
   }
 }
 

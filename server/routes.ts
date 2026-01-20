@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage.js";
+import { insertMessageSchema, insertNewsletterSubscriptionSchema } from "../shared/schema.js";
 import { api } from "../shared/routes.js";
 import { z } from "zod";
 
@@ -36,6 +37,20 @@ export async function registerRoutes(
   app.post(api.donations.create.path, async (req, res) => {
     const donation = await storage.createDonation(req.body);
     res.status(201).json(donation);
+  });
+
+  // === Newsletter ===
+  app.post("/api/newsletter/subscribe", async (req, res) => {
+    try {
+      const data = insertNewsletterSubscriptionSchema.parse(req.body);
+      const sub = await storage.createNewsletterSubscription(data);
+      res.status(201).json(sub);
+    } catch (error: any) {
+      if (error.code === '23505') { // Unique violation
+        return res.status(400).json({ message: "Email already subscribed" });
+      }
+      res.status(400).json({ message: error.message });
+    }
   });
 
   // Seed Data

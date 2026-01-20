@@ -9,14 +9,14 @@ import {
   FormItem, 
   FormLabel, 
   FormMessage 
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
+} from "../components/ui/form";
+import { Input } from "../components/ui/input";
+import { Button } from "../components/ui/button";
+import { Card, CardContent, CardFooter, CardHeader } from "../components/ui/card";
+import { useToast } from "../hooks/use-toast";
 import { Link, useLocation } from "wouter";
-import { SEO } from "@/components/seo/SEO";
-import logoImg from "@assets/vq_1768547763009.png";
+import { SEO } from "../components/seo/SEO";
+import logoImg from "../../attached_assets/vq_1768547763009.png";
 
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email address"),

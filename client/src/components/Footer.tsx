@@ -1,24 +1,39 @@
 import { Link } from "wouter";
 import { Facebook, Instagram, Mail, Phone, Youtube, Send } from "lucide-react";
 import { SiX as XIcon, SiTiktok as TiktokIcon } from "react-icons/si";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { useToast } from "../hooks/use-toast";
 import { useState } from "react";
+
+import { apiRequest } from "../lib/queryClient";
 
 export function Footer() {
   const { toast } = useToast();
   const [email, setEmail] = useState("");
+  const [isSubscribing, setIsSubscribing] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email || isSubscribing) return;
     
-    toast({
-      title: "Subscribed Successfully",
-      description: "Thank you for joining our newsletter!",
-    });
-    setEmail("");
+    setIsSubscribing(true);
+    try {
+      await apiRequest("POST", "/api/newsletter/subscribe", { email });
+      toast({
+        title: "Subscribed Successfully",
+        description: "Thank you for joining our newsletter!",
+      });
+      setEmail("");
+    } catch (error: any) {
+      toast({
+        title: "Subscription Failed",
+        description: error.message || "An error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubscribing(false);
+    }
   };
 
   return (
@@ -98,8 +113,9 @@ export function Footer() {
                   type="submit" 
                   size="icon" 
                   className="absolute right-1 top-1 h-9 w-9 rounded-lg"
+                  disabled={isSubscribing}
                 >
-                  <Send className="h-4 w-4" />
+                  <Send className={`h-4 w-4 ${isSubscribing ? 'animate-pulse' : ''}`} />
                 </Button>
               </div>
             </form>
