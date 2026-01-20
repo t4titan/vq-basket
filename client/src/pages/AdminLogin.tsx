@@ -40,17 +40,28 @@ export default function AdminLogin() {
 
   async function onSubmit(values: LoginValues) {
     setIsLoading(true);
-    // This is a mockup of a login process
-    console.log("Login attempt:", values);
     
+    // Hardcoded credentials for admin access
+    const ADMIN_EMAIL = "admin@vqbasketballfoundation.org";
+    const ADMIN_PASSWORD = "VQBFAdmin2026!";
+
     // Simulate API call
     setTimeout(() => {
       setIsLoading(false);
-      toast({
-        title: "Access Restricted",
-        description: "This administrative area is currently in maintenance mode.",
-        variant: "destructive",
-      });
+      
+      if (values.email === ADMIN_EMAIL && values.password === ADMIN_PASSWORD) {
+        toast({
+          title: "Login Successful",
+          description: "Welcome back, Admin.",
+        });
+        setLocation("/admin-dashboard"); // Hypothetical dashboard
+      } else {
+        toast({
+          title: "Invalid Credentials",
+          description: "Please check your email and password.",
+          variant: "destructive",
+        });
+      }
     }, 1500);
   }
 
