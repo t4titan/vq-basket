@@ -1,31 +1,32 @@
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
+import { Toaster } from "./components/ui/toaster";
+import { TooltipProvider } from "./components/ui/tooltip";
+import { Navigation } from "./components/Navigation";
+import { Footer } from "./components/Footer";
 
 // Pages
-import Home from "@/pages/Home";
-import About from "@/pages/About";
-import Programs from "@/pages/Programs";
-import Impact from "@/pages/Impact";
-import Contact from "@/pages/Contact";
-import Donate from "@/pages/Donate";
-import NotFound from "@/pages/not-found";
-import MeetTheTeam from "@/pages/MeetTheTeam";
-import WhatWeDoNigeria from "@/pages/WhatWeDoNigeria";
-import WhatWeHaveDone from "@/pages/WhatWeHaveDone";
-import ShoeDrive from "@/pages/ShoeDrive";
-import Tournament3ON3 from "@/pages/Tournament3ON3";
-import Empowerment from "@/pages/Empowerment";
-import Ambassadors from "@/pages/Ambassadors";
-import Gallery from "@/pages/Gallery";
-import AdminLogin from "@/pages/AdminLogin";
-import Register from "@/pages/Register";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Programs from "./pages/Programs";
+import Impact from "./pages/Impact";
+import Contact from "./pages/Contact";
+import Donate from "./pages/Donate";
+import NotFound from "./pages/not-found";
+import MeetTheTeam from "./pages/MeetTheTeam";
+import WhatWeDoNigeria from "./pages/WhatWeDoNigeria";
+import WhatWeHaveDone from "./pages/WhatWeHaveDone";
+import ShoeDrive from "./pages/ShoeDrive";
+import Tournament3ON3 from "./pages/Tournament3ON3";
+import Empowerment from "./pages/Empowerment";
+import Ambassadors from "./pages/Ambassadors";
+import Gallery from "./pages/Gallery";
+import AdminLogin from "./pages/AdminLogin";
+import Register from "./pages/Register";
+import CreatePost from "./pages/CreatePost";
 
-import { SEO } from "@/components/seo/SEO";
+import { SEO } from "./components/seo/SEO";
 
 function Router() {
   return (
@@ -92,6 +93,10 @@ function Router() {
       <Route>
         <SEO title="404 Not Found" />
         <NotFound />
+      </Route>
+      <Route path={"/create-post"}>
+        <SEO title="Create Post" />
+        <CreatePost />
       </Route>
     </Switch>
   );

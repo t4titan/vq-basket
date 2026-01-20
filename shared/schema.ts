@@ -5,6 +5,23 @@ import { relations } from "drizzle-orm";
 
 // Content Tables
 
+export const posts = pgTable("posts", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  content: text("content").notNull(),
+  excerpt: text("excerpt").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const insertPostSchema = createInsertSchema(posts).omit({
+  id: true,
+  createdAt: true,
+  excerpt: true // Generated on backend
+});
+
+export type Post = typeof posts.$inferSelect;
+export type InsertPost = z.infer<typeof insertPostSchema>;
+
 export const galleryItems = pgTable("gallery_items", {
   id: serial("id").primaryKey(),
   title: text("title"),

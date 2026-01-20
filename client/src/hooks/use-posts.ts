@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { api, buildUrl } from "shared/routes";
-import { type InsertPost } from "@shared/schema";
+import { api, buildUrl } from "../../../shared/routes";
+import { type InsertPost } from "../../../shared/schema";
 import { useToast } from "./use-toast";
 
 // Fetch all posts

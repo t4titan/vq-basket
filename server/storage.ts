@@ -1,5 +1,6 @@
-import {  galleryItems, teamMembers, messages, donations, partners, newsletterSubscriptions,
-  type GalleryItem, type InsertGalleryItem,
+import {  galleryItems, teamMembers, messages, donations, partners, newsletterSubscriptions,posts,
+          type InsertPost,
+          type Post, type GalleryItem, type InsertGalleryItem,
   type TeamMember, type InsertTeamMember,
   type Message, type InsertMessage,
   type Donation, type InsertDonation,
@@ -10,6 +11,14 @@ import { db } from "./db.js";
 import { eq, desc } from "drizzle-orm";
 
 export interface IStorage {
+
+  // Posts
+
+  getPosts(): Promise<Post[]>;
+    getPost(id: number): Promise<Post | undefined>;
+    createPost(post: InsertPost & { excerpt: string }): Promise<Post>;
+    updatePost(id: number, updates: Partial<InsertPost> & { excerpt?: string }): Promise<Post>;
+    deletePost(id: number): Promise<void>;
 
   // Gallery
   getGalleryItems(): Promise<GalleryItem[]>;
@@ -33,6 +42,34 @@ export interface IStorage {
 }
 
 export class DatabaseStorage implements IStorage {
+
+  // Posts
+
+  async getPosts(): Promise<Post[]> {
+    return await db.select().from(posts).orderBy(desc(posts.createdAt));
+  }
+
+  async getPost(id: number): Promise<Post | undefined> {
+    const [post] = await db.select().from(posts).where(eq(posts.id, id));
+    return post;
+  }
+
+  async createPost(post: InsertPost & { excerpt: string }): Promise<Post> {
+    const [newPost] = await db.insert(posts).values(post).returning();
+    return newPost;
+  }
+
+  async updatePost(id: number, updates: Partial<InsertPost> & { excerpt?: string }): Promise<Post> {
+    const [updated] = await db.update(posts)
+      .set(updates)
+      .where(eq(posts.id, id))
+      .returning();
+    return updated;
+  }
+
+  async deletePost(id: number): Promise<void> {
+    await db.delete(posts).where(eq(posts.id, id));
+  }
 
   // Gallery
   async getGalleryItems(): Promise<GalleryItem[]> {
