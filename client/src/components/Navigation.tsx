@@ -12,6 +12,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "../components/ui/navigation-menu";
+import DonationButton from "./DonationButton";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -219,11 +220,12 @@ export function Navigation() {
 
               <div className="h-px bg-border my-2" />
               
-              <Link href="/donate" onClick={() => setIsOpen(false)}>
+              {/* <Link href="/donate" onClick={() => setIsOpen(false)}>
                 <Button className="w-full btn-primary text-[12px] py-2 mt-4">
                   Donate Now
                 </Button>
-              </Link>
+              </Link> */}
+              <DonationButton />
             </div>
           </motion.div>
         )}
