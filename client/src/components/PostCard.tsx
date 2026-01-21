@@ -12,7 +12,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "../components/ui/alert-dialog";
+} from "./ui/alert-dialog";
 import { useDeletePost } from "../hooks/use-posts";
 
 interface PostCardProps {

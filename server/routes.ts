@@ -23,6 +23,7 @@ function generateSessionToken(): string {
 }
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  const httpServer = createServer(app);
 
   // Auth middleware for admin routes
   const authenticateAdmin = (req: any, res: any, next: any) => {
@@ -86,11 +87,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.json({ valid: true, admin: req.admin });
   });
 
-export async function registerRoutes(
-  httpServer: Server,
-  app: Express
-): Promise<Server> {
-
   // === Posts ===
 
   app.get(api.posts.list.path, async (req, res) => {
@@ -140,9 +136,6 @@ export async function registerRoutes(
           field: err.errors[0].path.join('.'),
         });
       }
-      // Handle not found implies error in storage logic usually, but here checking existence first is safer or catching error
-      // storage.updatePost throws if not found? No, returns undefined usually or Drizzle doesn't return. 
-      // Simplified for MVP.
       throw err;
     }
   });
@@ -200,6 +193,19 @@ export async function registerRoutes(
 
   return httpServer;
 }
+
+async function seedDatabase() {
+  const team = await storage.getTeamMembers();
+  if (team.length === 0) {
+    await storage.createTeamMember({
+      name: "Victoria Queen",
+      role: "Founder & CEO",
+      type: "team",
+      bio: "Former professional basketball player dedicated to empowering young girls through sports.",
+    });
+  }
+}
+
 
 async function seedDatabase() {
 
