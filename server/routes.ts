@@ -22,9 +22,10 @@ function generateSessionToken(): string {
   return `session_${Date.now()}_${Math.random().toString(36).substring(2, 15)}`;
 }
 
-export async function registerRoutes(app: Express): Promise<Server> {
-  const httpServer = createServer(app);
-
+export async function registerRoutes(
+  httpServer: Server,
+  app: Express
+): Promise<Server> {
   // Auth middleware for admin routes
   const authenticateAdmin = (req: any, res: any, next: any) => {
     const authHeader = req.headers.authorization;
@@ -195,20 +196,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
 }
 
 async function seedDatabase() {
-  const team = await storage.getTeamMembers();
-  if (team.length === 0) {
-    await storage.createTeamMember({
-      name: "Victoria Queen",
-      role: "Founder & CEO",
-      type: "team",
-      bio: "Former professional basketball player dedicated to empowering young girls through sports.",
-    });
-  }
-}
-
-
-async function seedDatabase() {
-
   const team = await storage.getTeamMembers();
   if (team.length === 0) {
     await storage.createTeamMember({
