@@ -11,6 +11,81 @@ function generateExcerpt(content: string): string {
   return plainText.substring(0, 150).trim() + (plainText.length > 150 ? '...' : '');
 }
 
+// Hardcoded admin credentials
+const ADMIN_USERNAME = "admin";
+const ADMIN_PASSWORD = "padher2024";
+
+// Simple session store for admin login
+const activeSessions: Map<string, { username: string; loginTime: Date }> = new Map();
+
+function generateSessionToken(): string {
+  return `session_${Date.now()}_${Math.random().toString(36).substring(2, 15)}`;
+}
+
+export async function registerRoutes(app: Express): Promise<Server> {
+
+  // Auth middleware for admin routes
+  const authenticateAdmin = (req: any, res: any, next: any) => {
+    const authHeader = req.headers.authorization;
+
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return res.status(401).json({ message: "No authorization token provided" });
+    }
+
+    const token = authHeader.split(" ")[1];
+    const session = activeSessions.get(token);
+
+    if (!session) {
+      return res.status(401).json({ message: "Invalid or expired session" });
+    }
+
+    req.admin = session;
+    next();
+  };
+
+  // Admin Login
+  app.post("/api/auth/admin/login", async (req, res) => {
+    try {
+      const { username, password } = req.body;
+
+      if (username !== ADMIN_USERNAME || password !== ADMIN_PASSWORD) {
+        return res.status(401).json({ message: "Invalid credentials" });
+      }
+
+      const token = generateSessionToken();
+      activeSessions.set(token, { username, loginTime: new Date() });
+
+      res.json({ 
+        message: "Login successful", 
+        token,
+        admin: { username }
+      });
+    } catch (error: any) {
+      res.status(400).json({ message: error.message });
+    }
+  });
+
+  // Admin Logout
+  app.post("/api/auth/admin/logout", authenticateAdmin, async (req, res) => {
+    try {
+      const authHeader = req.headers.authorization;
+      const token = authHeader?.split(" ")[1];
+
+      if (token) {
+        activeSessions.delete(token);
+      }
+
+      res.json({ message: "Logged out successfully" });
+    } catch (error: any) {
+      res.status(400).json({ message: error.message });
+    }
+  });
+
+  // Verify admin session
+  app.get("/api/auth/admin/verify", authenticateAdmin, async (req, res) => {
+    res.json({ valid: true, admin: req.admin });
+  });
+
 export async function registerRoutes(
   httpServer: Server,
   app: Express
