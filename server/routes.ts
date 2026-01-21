@@ -13,7 +13,7 @@ function generateExcerpt(content: string): string {
 
 // Hardcoded admin credentials
 const ADMIN_USERNAME = "admin";
-const ADMIN_PASSWORD = "padher2024";
+const ADMIN_PASSWORD = "victoriasqueenbasket2024";
 
 // Simple session store for admin login
 const activeSessions: Map<string, { username: string; loginTime: Date }> = new Map();
