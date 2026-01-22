@@ -11,9 +11,9 @@ export default function Home() {
   const [statIndex, setStatIndex] = useState(0);
 
   const heroStats = [
-    { value: "500+", label: "Young girls empowered through our programs since 2020." },
-    { value: "12", label: "States across Nigeria reached with our grassroots initiatives." },
-    { value: "100%", label: "Scholarship support for our most dedicated student-athletes." },
+    { value: "100+", label: "Young girls empowered through our programs since 2024." },
+    { value: "6", label: "States across South-West Nigeria reached with our grassroots initiatives." },
+    { value: "100%", label: "Empowerment support for young girls in target communities." },
     { value: "25+", label: "Community tournaments organized to foster local talent." }
   ];
 
@@ -43,7 +43,7 @@ export default function Home() {
     {
       id: 4,
       title: "Team Moments",
-      imageUrl: "https://vqbasketballfoundation.org/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-16-at-06.31.59.jpeg",
+      imageUrl: "https://res.cloudinary.com/dikbulrav/image/upload/v1769046051/HomePage/VICTORIA_S%20QUEEN%20BASKETBALL%20FOUNDATION/DAY%203/DAY_3_CAMP_55_y1b6yt.jpg",
     },
   ];
 
@@ -77,8 +77,7 @@ export default function Home() {
         </div>
 
         <div className="absolute inset-0 z-0 opacity-20">
-          <img 
-            src="https://vqbasketballfoundation.org/wp-content/uploads/2025/01/D609554-2-1536x1025.jpg" 
+          <img src="https://res.cloudinary.com/dikbulrav/image/upload/v1769046108/HomePage/VICTORIA_S%20QUEEN%20BASKETBALL%20FOUNDATION/DAY%203/DAY_3_CAMP_eo14h9.jpg" 
             alt="Basketball Team Huddle" 
             className="w-full h-full object-cover"
           />
@@ -100,7 +99,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-xl text-white/80 max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
-              We empower young women to become leaders on and off the court through mentorship, education, and community service.
+              Our faith-based programs empower young girls to develop leadership skills on the court and in their communities through mentorship, education, and service..
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -167,7 +166,7 @@ export default function Home() {
               <span className="text-primary font-bold tracking-wider uppercase text-sm">Who We Are</span>
               <h2 className="text-4xl md:text-5xl font-serif text-secondary mt-2 mb-6">Building Champions for Life</h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Victoria's Queens Basketball Foundation is dedicated to the holistic development of young women in Nigeria. We use basketball as a tool for social change, providing elite training alongside life skills and vocational support.
+                Victoria's Queens Basketball Foundation is dedicated to the holistic development of young girls in Nigeria. Through faith-based programs, we use basketball as a tool for social change, offering elite training along with life skills and vocational support.
               </p>
               <Link href="/about">
                 <Button variant="outline" className="rounded-full px-8 py-6 border-primary text-primary hover:bg-primary hover:text-white">
@@ -233,11 +232,11 @@ export default function Home() {
           >
             <div className="space-y-6">
               <span className="text-primary font-bold tracking-wider uppercase text-sm">Vision & Faith</span>
-              <h2 className="text-4xl md:text-5xl font-serif">A Message from Visioneer</h2>
+              <h2 className="text-4xl md:text-5xl font-serif text-white">A Message from Visioneer</h2>
               <div className="space-y-4 text-xl text-white/80 leading-relaxed">
                 <p className="font-bold text-white">ABOUT VICTORIA’S QUEENS BASKETBALL FOUNDATION</p>
                 <p>
-                  Victoria’s Queens Basketball Foundation is a faith-based nonprofit organization dedicated to empowering young girls through basketball. We provide free training, mentorship, and spiritual guidance to help girls from underserved communities thrive physically, mentally, and spiritually.
+                  Victoria’s Queens Basketball Foundation (a registered 501(c)(3) nonprofit organization | EIN: 33-3667260) is a faith-based nonprofit dedicated to empowering young girls through basketball. We provide free training, mentorship, and spiritual guidance to help girls from underserved communities thrive physically, mentally, and spiritually.
                 </p>
                 <p>
                   Our mission is to build strong leaders, foster academic success, and inspire hope through faith and teamwork, creating brighter futures both on and off the court.

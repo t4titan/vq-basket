@@ -127,12 +127,13 @@ export function Navigation() {
               </Link>
             ))}
 
-            <Link href="/donate">
+            {/* <Link href="/donate">
               <Button className="btn-primary gap-2 rounded-full px-6">
                 <Heart className="w-4 h-4 fill-current" />
                 Donate
               </Button>
-            </Link>
+            </Link> */}
+            <DonationButton />
           </nav>
 
           {/* Mobile Menu Button */}
